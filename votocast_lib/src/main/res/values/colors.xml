@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ff8926</color>
+    <color name="colorPrimaryDark">#F57C00</color>
+    <color name="colorAccent">#9E9E9E</color>
+    <color name="whiteText">#FFF</color>
+    <color name="unselectedTab">#faae6e</color>
+
+    <color name="edittextBack">#32c2c1c1</color>
+    <color name="tabColor">#202020</color>
+
+    <color name="primaryText">#424242</color>
+    <color name="secondaryText">#9E9E9E</color>
+
+    <color name="opacityBottom">#96000000</color>
+    <color name="opacityVideoThumb">#59000000</color>
+    <color name="opacityVideoLayer">#72050505</color>
+
+    <color name="list">#F9F9F9</color>
+
+    <color name="settingLebalBack">#f0f1f1</color>
+    <color name="settingLebalTitle">#a1a1a1</color>
+    <color name="settingText">#3b3b3b</color>
+    <color name="settingAns">#3b3b3b</color>
+    <color name="settingHint">#d0d0d0</color>
+
+    <color name="chekbox">#A0CC19</color>
+
+    <color name="detailPopupBack">#202020</color>
+    <color name="detailPopupdivider">#2A2A2A</color>
+
+    <color name="homeTitle">#4d4d4d</color>
+    <color name="homeVoteShare">#afafaf</color>
+    <color name="homeSubTitle">#9b9b9b</color>
+    <color name="homeText">#4d4d4d</color>
+    <color name="homeDivider">#e1e1e1</color>
+    <!--<color name="homeDivider">#F2F2F2</color>-->
+
+     <!--campaign-->
+    <color name="campListTitle">#4d4d4d</color>
+    <color name="campListSubTitle">#9b9b9b</color>
+    <color name="campListText">#3c3c3c</color>
+    <color name="campTitle">#adadad</color>
+    <color name="campEventTitle">#3c3c3c</color>
+    <color name="campEventExpDate">#afafaf</color>
+    <color name="campEventText">#3c3c3c</color>
+    <color name="campBtn">#99191a1a</color>
+
+    <color name="searchEditBack">#FF953D</color>
+
+    <color name="activityText">#3b3b3b</color>
+</resources>

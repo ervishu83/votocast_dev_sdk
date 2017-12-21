@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.votocast_sdk_lib.HomeActivity">
+
+    <Button
+        android:id="@+id/btnVotocast"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:padding="8dp"
+        android:text="VOTOCAST"
+        android:textSize="18sp"
+        android:background="#4CAF50"
+        android:textColor="#fff"/>
+
+    <Button
+        android:id="@+id/btnO2life"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnVotocast"
+        android:layout_centerHorizontal="true"
+        android:padding="8dp"
+        android:text="O2Life"
+        android:visibility="gone"/>
+
+</RelativeLayout>

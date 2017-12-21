@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whiteText"
+    android:paddingBottom="@dimen/padding_8"
+    android:paddingLeft="@dimen/padding_16"
+    android:paddingRight="@dimen/padding_16"
+    android:paddingTop="@dimen/padding_8"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/civListItemVotocastProfilePic"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:src="@drawable/event1"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp" />
+
+    <TextView
+        android:id="@+id/tvListItemProfileName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@+id/civListItemVotocastProfilePic"
+        android:layout_toRightOf="@+id/civListItemVotocastProfilePic"
+        android:paddingLeft="@dimen/padding_8"
+        android:textColor="@color/homeTitle"
+        tools:text="beyoncefan"/>
+
+    <TextView
+        android:id="@+id/tvListItemProfileFollower"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvListItemProfileName"
+        android:layout_toEndOf="@+id/civListItemVotocastProfilePic"
+        android:layout_toRightOf="@+id/civListItemVotocastProfilePic"
+        android:paddingLeft="@dimen/padding_8"
+        tools:text="13,456 followers"
+        android:textColor="@color/homeSubTitle"/>
+
+    <ImageView
+        android:id="@+id/ivListItemProfileSettingIcon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@drawable/person_orange"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"/>
+
+</RelativeLayout>

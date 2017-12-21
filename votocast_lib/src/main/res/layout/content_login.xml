@@ -1,0 +1,546 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.votocast.votocast.LoginActivity"
+    tools:showIn="@layout/activity_login">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.yqritc.scalablevideoview.ScalableVideoView
+            android:id="@+id/loginVideo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:scalableType="centerCrop"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="3">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.9"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16">
+
+                <ImageView
+                    android:id="@+id/ivLoginLogo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/tvLoginLogoText"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:src="@drawable/logo" />
+
+                <LinearLayout
+                    android:id="@+id/tvLoginLogoText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvLoginLogoText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Post videos, win prizes, "
+                        android:textColor="@color/whiteText" />
+
+                    <TextView
+                        android:id="@+id/tvLoginLogoText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="be awesome."
+                        android:textColor="@color/whiteText" />
+                </LinearLayout>
+
+
+            </RelativeLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.9">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1.9"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/padding_32"
+                    android:paddingRight="@dimen/padding_32">
+
+                    <EditText
+                        android:id="@+id/etLoginUsername"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Username"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="gone" />
+
+                    <EditText
+                        android:id="@+id/etLoginPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etLoginUsername"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnLoginSignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etLoginPassword"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:background="@drawable/button_background"
+                        android:text="Log IN"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:textColor="@color/whiteText"
+                        android:visibility="gone" />
+
+                    <LinearLayout
+                        android:id="@+id/tvLoginForgotPwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnLoginSignup"
+                        android:layout_margin="@dimen/margin_8"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tvLoginForgotText1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Can't log in? "
+                            android:textColor="@color/whiteText" />
+
+                        <TextView
+                            android:id="@+id/tvLoginForgotText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="Reset your password."
+                            android:textColor="@color/whiteText" />
+                    </LinearLayout>
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tvLoginFacebook"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/tvLoginForgotPwd"-->
+                    <!--android:layout_marginTop="@dimen/margin_32"-->
+                    <!--android:text="   Log in with facebook"-->
+                    <!--android:drawableLeft="@drawable/facebook"-->
+                    <!--android:gravity="start"-->
+                    <!--android:layout_centerInParent="true"-->
+                    <!--android:textColor="@color/whiteText"/>-->
+
+                    <FrameLayout
+                        android:id="@+id/frameLoginFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvLoginForgotPwd"
+                        android:visibility="gone">
+
+                        <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/tvLoginFacebook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLoginForgotPwd"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_32"
+                            android:gravity="start"
+                            android:padding="@dimen/padding_4"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:scaleType="centerInside"
+                            facebook:com_facebook_login_text=""
+                            facebook:com_facebook_logout_text="" />
+
+                        <TextView
+                            android:id="@+id/tvLoginFacebookClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLoginForgotPwd"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="@dimen/margin_16"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:drawableLeft="@drawable/facebook"
+                            android:gravity="start"
+                            android:padding="@dimen/padding_4"
+                            android:text="   Log in with facebook"
+                            android:textColor="@color/whiteText" />
+
+                    </FrameLayout>
+
+
+                    <!--<LinearLayout-->
+                    <!--android:id="@+id/llLoginSignupLink"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:layout_marginBottom="@dimen/margin_16"-->
+                    <!--android:clickable="true"-->
+                    <!--android:orientation="horizontal">-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Not a member?" />-->
+
+                    <!--<TextView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="Sign up now"-->
+                    <!--android:textColor="@color/colorPrimary" />-->
+                    <!--</LinearLayout>-->
+
+                    <!--Signup screen-->
+
+                    <EditText
+                        android:id="@+id/etSignupEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/etSignupUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etSignupEmail"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Username"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/etSignupPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etSignupUsername"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="visible" />
+
+                    <EditText
+                        android:id="@+id/etSignupConfirmPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etSignupPassword"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Confirm Password"
+                        android:inputType="textPassword"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="visible" />
+
+                    <Button
+                        android:id="@+id/btnSignup"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etSignupConfirmPassword"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:background="@drawable/button_background"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="Create Account"
+                        android:textColor="@color/whiteText"
+                        android:visibility="visible" />
+
+                    <TextView
+                        android:id="@+id/tvSignupText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btnSignup"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:gravity="center"
+                        android:visibility="visible"
+                        android:text="By creating an account, you agree to the"
+                        android:textColor="@color/whiteText" />
+
+                    <LinearLayout
+                        android:id="@+id/tvSignupText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvSignupText1"
+                        android:clickable="true"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvSignupText2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Terms of Service "
+                            android:textColor="@color/whiteText" />
+
+                        <TextView
+                            android:id="@+id/tvSignupText3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="and "
+                            android:textColor="@color/whiteText" />
+
+                        <TextView
+                            android:id="@+id/tvSignupText4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:text="Privacy Policy"
+                            android:textColor="@color/whiteText" />
+                    </LinearLayout>
+
+                    <FrameLayout
+                        android:id="@+id/frameSignupFacebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvSignupText"
+                        android:layout_marginTop="@dimen/margin_8"
+                        android:visibility="visible">
+
+                        <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/tvSignupFacebook"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLoginForgotPwd"
+                            android:layout_gravity="center"
+                            android:gravity="start"
+                            android:padding="@dimen/padding_4"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:scaleType="centerInside"
+                            facebook:com_facebook_login_text=""
+                            facebook:com_facebook_logout_text="" />
+
+                        <TextView
+                            android:id="@+id/tvSignupFacebookClick"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/tvLoginForgotPwd"
+                            android:layout_centerInParent="true"
+                            android:layout_gravity="center"
+                            android:drawableLeft="@drawable/facebook"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:gravity="start"
+                            android:padding="@dimen/padding_4"
+                            android:text="   Log in with facebook"
+                            android:textColor="@color/whiteText" />
+
+                    </FrameLayout>
+
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tvSignupLoginagain"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:text="Already sign up? Login here"-->
+                    <!--android:visibility="gone" />-->
+
+                    <!--forgot pwd screen-->
+
+                    <EditText
+                        android:layout_marginTop="@dimen/margin_32"
+                        android:id="@+id/etForgotPwdEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/edittext_background"
+                        android:gravity="center"
+                        android:hint="Email"
+                        android:inputType="textEmailAddress"
+                        android:padding="@dimen/padding_8"
+                        android:singleLine="true"
+                        android:textColor="@color/whiteText"
+                        android:textColorHint="@color/whiteText"
+                        android:visibility="gone" />
+
+                    <Button
+                        android:id="@+id/btnForgotPwd"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/etForgotPwdEmail"
+                        android:layout_marginTop="@dimen/margin_16"
+                        android:background="@drawable/button_background"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="Submit"
+                        android:textColor="@color/whiteText"
+                        android:visibility="gone" />
+
+                    <!--<TextView-->
+                    <!--android:id="@+id/tvForgotPwdLoginagain"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true"-->
+                    <!--android:text="Go to login"-->
+                    <!--android:visibility="gone" />-->
+
+                </RelativeLayout>
+
+            </ScrollView>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.2"
+                android:background="@color/opacityBottom">
+
+                <LinearLayout
+                    android:id="@+id/tvLoginSignupLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/margin_8"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvLoginSignupLink1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="New to VOTOCAST? "
+                        android:textColor="@color/whiteText" />
+
+                    <TextView
+                        android:id="@+id/tvLoginSignupLink2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Sign Up."
+                        android:textColor="@color/whiteText" />
+                </LinearLayout>
+
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvLoginSignupLink"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/sign_up_text"-->
+                <!--android:textColor="@color/whiteText"-->
+                <!--android:layout_centerInParent="true"/>-->
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvSignupLoginagain"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_centerInParent="true"-->
+                <!--android:textColor="@color/whiteText"-->
+                <!--android:text="Already sign up? Login here"-->
+                <!--android:visibility="gone" />-->
+
+                <LinearLayout
+                    android:id="@+id/tvSignupLoginagain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_margin="@dimen/margin_8"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:clipChildren="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tvSignupLoginagain1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Already Signed Up? "
+                        android:textColor="@color/whiteText" />
+
+                    <TextView
+                        android:id="@+id/tvSignupLoginagain2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Login here."
+                        android:textColor="@color/whiteText" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvForgotPwdLoginagain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Go to login"
+                    android:textColor="@color/whiteText"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+
+
+</LinearLayout>

@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">VOTOCAST</string>
+    <string name="title_activity_signup">Signup</string>
+    <string name="title_activity_login">Login</string>
+
+    <string name="title_activity_main">MainActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_activity_change_password">CHANGE PASSWORD</string>
+    <string name="title_activity_notication">NOTIFICATIONS</string>
+
+    <!-- Twitter Configurations -->
+    <string name="twitter_consumer_key">SbwoE9lAeaRn82n1XwgmY1iT7</string>
+    <string name="twitter_consumer_secret">fl7DQQcfrw0RnDxWOEiHPFjwWMzPXSEfL5txSwJw96Qee35DAg</string>
+
+    <string name="facebook_app_id">1401236569902579</string>
+    <string name="title_activity_search">SEARCH</string>
+    <string name="title_activity_reports">REPORTS</string>
+    <string name="title_activity_comment">COMMENTS</string>
+
+    <!-- End Configurations -->
+
+    <!--Invite Friends-->
+
+    <string name="deep_link_default">Deep link not set</string>
+    <string name="invitation_id_default">Invitation ID not set</string>
+
+    <string name="invitation_title">Send App Invite Invitation</string>
+    <string name="invitation_deep_link">http://votocast.com/</string>
+    <string name="invitation_cta">Install!</string>
+
+    <string name="deep_link_fmt" formatted="false">Deep Link: %s</string>
+    <string name="invitation_id_fmt" formatted="false">Invitation ID: %s</string>
+
+    <string name="send_failed">Sending invitations failed</string>
+    <string name="invite_dialog_title">You got an invitation!</string>
+
+    <string name="google_play_services_error">Google Play Services Error</string>
+    <!--Complete Invite Friends-->
+
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_privacy_policy">PrivacyPolicyActivity</string>
+    <string name="title_activity_rules">RulesActivity</string>
+    <string name="title_activity_support">SupportActivity</string>
+    <string name="title_activity_terms_of_service">TermsOfServiceActivity</string>
+    <string name="title_activity_contest_rules">ContestRulesActivity</string>
+    <string name="home_message">Please follow a Producer or a Campaign</string>
+    <string name="title_activity_report_issue">ReportIssueActivity</string>
+
+    <!--<string name="google_analytics_id">UA-76146367-2</string>-->
+</resources>

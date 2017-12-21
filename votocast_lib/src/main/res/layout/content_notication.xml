@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.votocast.votocast.NoticationActivity"
+    tools:showIn="@layout/activity_notication">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/settingLebalBack">
+
+                <TextView
+                    android:id="@+id/tvNotificationTitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:text="VOTES + SHARES"
+                    android:textSize="12sp"
+                    android:textColor="@color/settingLebalTitle" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgNotificationVotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbNotificationVotes1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="Off"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationVotes2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="From Followers"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationVotes3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="From Everyone"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/settingLebalBack">
+
+                <TextView
+                    android:id="@+id/tvNotificationTitle2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:text="COMMENTS"
+                    android:textSize="12sp"
+                    android:textColor="@color/settingLebalTitle" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgNotificationComments"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbNotificationComments1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="Off"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationComments2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="From Followers"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationComments3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="From Everyone"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/settingLebalBack">
+
+                <TextView
+                    android:id="@+id/tvNotificationTitle3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:text="NEW FOLLOWERS"
+                    android:textSize="12sp"
+                    android:textColor="@color/settingLebalTitle" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgNotificationNewFollowers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbNotificationNewFollowers1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="Off"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationNewFollowers2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="From Everyone"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/settingLebalBack">
+
+                <TextView
+                    android:id="@+id/tvNotificationTitle4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:text="NEW CONTEST"
+                    android:textSize="12sp"
+                    android:textColor="@color/settingLebalTitle" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:id="@+id/rgNotificationNewContest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/rbNotificationNewContest1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="Off"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginLeft="@dimen/margin_50"
+                    android:background="@color/edittextBack" />
+                <RadioButton
+                    android:id="@+id/rbNotificationNewContest2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginRight="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:button="@drawable/ic_checkbox"
+                    android:text="On"
+                    android:checked="true"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:paddingTop="@dimen/padding_8"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:textColor="@color/settingAns"
+                    android:textColorHint="@color/settingHint"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textSize="@dimen/profileETSize" />
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

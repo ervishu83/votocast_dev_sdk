@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvShareReports"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reports"
+        android:padding="@dimen/padding_16"
+        android:textColor="@color/settingText"
+        android:textSize="@dimen/profileETSize"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/edittextBack" />
+
+    <TextView
+        android:id="@+id/tvShareFb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Share to Facebook"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/padding_16"
+        android:textColor="@color/settingText"
+        android:textSize="@dimen/profileETSize"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/edittextBack" />
+
+    <TextView
+        android:id="@+id/tvShareTweet"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tweet"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/settingText"
+        android:padding="@dimen/padding_16"
+        android:textSize="@dimen/profileETSize"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/edittextBack" />
+
+    <TextView
+        android:id="@+id/tvShareCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy Share URL"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/settingText"
+        android:padding="@dimen/padding_16"
+        android:textSize="@dimen/profileETSize"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/edittextBack" />
+
+    <TextView
+        android:id="@+id/tvDeleteVideo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Video"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/settingText"
+        android:padding="@dimen/padding_16"
+        android:textSize="@dimen/profileETSize"
+        android:visibility="gone"/>
+
+
+</LinearLayout>

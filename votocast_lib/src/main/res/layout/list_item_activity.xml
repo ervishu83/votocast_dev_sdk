@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_weight="4"
+    android:padding="@dimen/padding_16">
+
+    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/civListItemActivityProfilePic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/campaign_icon"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp" />
+
+    <TextView
+        android:id="@+id/tvListActivitySimpleText"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewListItem"
+        android:layout_marginLeft="@dimen/margin_16"
+        tools:text="Fun in the sun, best weekend of the year. #vc_coachella2016"
+        android:textColor="@color/homeText"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+    <com.apradanas.simplelinkabletext.LinkableTextView
+        android:id="@+id/tvListActivityText"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/viewListItem"
+        android:layout_marginLeft="@dimen/margin_16"
+        tools:text="Fun in the sun, best weekend of the year. #vc_coachella2016"
+        android:textColor="@color/activityText"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:id="@+id/ivActivityVideoPic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:src="@drawable/event5"
+        android:visibility="visible"/>
+
+    <ImageView
+        android:id="@+id/ivActivityActionIcon"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/margin_16"
+        android:src="@drawable/person_orange"
+        android:visibility="gone"/>
+
+</LinearLayout>

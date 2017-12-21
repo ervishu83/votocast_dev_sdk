@@ -1,0 +1,379 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fb="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/detailPopupBack"
+    android:clickable="true"
+    android:minHeight="1000dp"
+    android:minWidth="1000dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@color/detailPopupBack"
+        android:orientation="horizontal"
+        android:weightSum="3">
+
+        <ImageView
+            android:id="@+id/detailDialogBackBtn"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_chevron_left_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvDetailDialogTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="DETAILS"
+            android:textColor="@color/whiteText"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/detailDialogNextBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_chevron_right" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="230dp">
+
+        <com.volokh.danylo.video_player_manager.ui.VideoPlayerView
+            android:id="@+id/videoviewDetailVideoPlayer"
+            android:layout_width="fill_parent"
+            android:layout_height="230dp" />
+
+        <VideoView
+            android:id="@+id/videoviewDetailVideo"
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"
+            android:visibility="gone" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="230dp"
+            android:background="@color/opacityVideoLayer">
+
+            <ImageView
+                android:id="@+id/ivDetailVideoMute"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right|bottom"
+                android:clickable="true"
+                android:src="@drawable/sound"
+                android:paddingBottom="@dimen/padding_16"
+                android:paddingLeft="@dimen/padding_4"
+                android:paddingRight="@dimen/padding_16"
+                android:paddingTop="@dimen/padding_4"
+                android:foreground="?android:attr/selectableItemBackground"/>
+
+            <ImageView
+                android:id="@+id/ivDetailVidPlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/play_pause"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/detailPopupBack">
+
+        <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:fillViewport="true"-->
+        <!--android:layout_above="@+id/btnDetailPopupSubmit">-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="1000dp"
+            android:background="@color/detailPopupBack"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDetailPopupText1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:gravity="start"
+                    android:text="Campaigns"
+                    android:textColor="@color/whiteText" />
+
+                <TextView
+                    android:id="@+id/tvDetailPopupCampaigns"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="end"
+                    android:hint="select campaign"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorHint="@color/edittextBack" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:background="@color/detailPopupdivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_4"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDetailPopupText2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:gravity="start"
+                    android:text="Producers"
+                    android:textColor="@color/whiteText" />
+
+                <TextView
+                    android:id="@+id/tvDetailPopupProducers"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="end"
+                    tools:text="/@festivalman"
+                    android:textColor="@color/colorPrimary" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:background="@color/detailPopupdivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_4"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDetailPopupText3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.2"
+                    android:gravity="start"
+                    android:text="About"
+                    android:textColor="@color/whiteText" />
+
+                <EditText
+                    android:id="@+id/evDetailPopupAboutVideo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.8"
+                    android:background="@android:color/transparent"
+                    android:editable="true"
+                    android:gravity="center_vertical|end"
+                    android:hint="Tell us about the video.."
+                    android:padding="@dimen/padding_8"
+                    android:textColor="@color/whiteText"
+                    android:textColorHint="@color/edittextBack"
+                    android:textSize="@dimen/profileETSize" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="40dp"-->
+            <!--android:layout_marginBottom="@dimen/margin_4"-->
+            <!--android:layout_marginLeft="@dimen/margin_16"-->
+            <!--android:layout_marginRight="@dimen/margin_16"-->
+            <!--android:layout_marginTop="@dimen/margin_4"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:weightSum="1">-->
+
+            <!--<TextView-->
+            <!--android:id="@+id/tvDetailPopupText3"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.3"-->
+            <!--android:gravity="start"-->
+            <!--android:text="Description"-->
+            <!--android:textColor="@color/whiteText" />-->
+
+            <!--<EditText-->
+            <!--android:id="@+id/evProfileName"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:layout_weight="0.7"-->
+            <!--android:padding="@dimen/padding_8"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:gravity="center_vertical|end"-->
+            <!--android:hint="Tell us about the video.."-->
+            <!--android:textSize="@dimen/profileETSize"-->
+            <!--android:textColor="@color/whiteText"-->
+            <!--android:textColorHint="@color/edittextBack"/>-->
+
+            <!--</LinearLayout>-->
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:background="@color/detailPopupdivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_4"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDetailPopupText4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="start"
+                    android:text="Share to Facebook"
+                    android:textColor="@color/whiteText" />
+
+                <Button
+                    android:id="@+id/btnDetailPopupShareFbClick"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/connect"
+                    android:gravity="end"
+                    android:visibility="gone"/>
+
+                <com.facebook.login.widget.LoginButton xmlns:facebook="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/btnDetailPopupShareFb"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:gravity="end"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    facebook:com_facebook_login_text=""
+                    facebook:com_facebook_logout_text="" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:background="@color/detailPopupdivider" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginBottom="@dimen/margin_4"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_4"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:id="@+id/tvDetailPopupText5"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.7"
+                    android:gravity="start"
+                    android:text="Share to Twitter"
+                    android:textColor="@color/whiteText" />
+
+                <Button
+                    android:id="@+id/btnDetailPopupShareTwitter"
+                    android:layout_width="0dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="0.3"
+                    android:background="@drawable/connect"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:gravity="end" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--</ScrollView>-->
+
+        <Button
+            android:id="@+id/btnDetailPopupSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorPrimary"
+            android:text="SUBMIT"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:textColor="@color/whiteText" />
+
+    </RelativeLayout>
+
+</LinearLayout>

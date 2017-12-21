@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/whiteText"
+    tools:context="fragments.ProfileFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/swipeContainerProfile"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollViewProfile">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:weightSum="5">
+
+            <LinearLayout
+                android:id="@+id/llProfileFragmentOne"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/opacityVideoThumb"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:id="@+id/ivProfileFragmentMainImage"
+                        android:layout_width="fill_parent"
+                        android:layout_height="150dp"
+                        android:scaleType="fitXY"
+                        android:src="@color/edittextBack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/opacityBottom"
+                        android:gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:weightSum="5">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"/>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tvProfileFragmentVideoCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="16sp"
+                                        tools:text="0" />
+
+                                    <TextView
+                                        android:id="@+id/tvProfileTitle1"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:gravity="top"
+                                        android:text="videos"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tvProfileFragmentVotesCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center|bottom"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="16sp"
+                                        tools:text="1.4k" />
+
+                                    <TextView
+                                        android:id="@+id/tvProfileTitle2"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="top|center"
+                                        android:gravity="top"
+                                        android:text="votes"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="12sp"  />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tvProfileFragmentFollowersCount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="16sp"
+                                        tools:text="4k" />
+
+                                    <TextView
+                                        android:id="@+id/tvProfileTitle3"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:text="followers"
+                                        android:textColor="@color/whiteText"
+                                        android:textSize="12sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical"/>
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/margin_8"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingLeft="@dimen/padding_64"
+                                android:paddingRight="@dimen/padding_64">
+
+                                <Button
+                                    android:id="@+id/btnProfileFragmentSettings"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:background="@drawable/follow_background"
+                                    android:text="Settings"
+                                    android:clickable="true"
+                                    android:foreground="?android:attr/selectableItemBackground"
+                                    android:textColor="@color/whiteText" />
+
+                                <TextView
+                                    android:id="@+id/btnProfileFragmentFollower"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:clickable="true"
+                                    android:background="@drawable/button_background"
+                                    android:foreground="?android:attr/selectableItemBackground"
+                                    android:text="+ Follow"
+                                    android:gravity="center"
+                                    android:textColor="@color/whiteText"
+                                    android:visibility="gone" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </FrameLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlProfileFragmentSecond"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.7"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingTop="@dimen/padding_8"
+                android:paddingRight="@dimen/padding_8"
+                android:paddingBottom="@dimen/padding_8">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civProfileFragmentProfilePic"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/user_default"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="0dp" />
+
+                <LinearLayout
+                    android:id="@+id/llProfileFragmentUserDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:layout_toEndOf="@+id/civProfileFragmentProfilePic"
+                    android:layout_toRightOf="@+id/civProfileFragmentProfilePic"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvProfileFragmentUserName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primaryText"
+                        android:textSize="15sp"
+                        tools:text="Danny pugh" />
+
+                    <TextView
+                        android:id="@+id/tvProfileFragmentUserAddress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_8"
+                        android:textColor="@color/secondaryText"
+                        android:textSize="10sp"
+                        tools:text="LOS ANGELES,CA" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tvProfileFragmentUserDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llProfileFragmentUserDetail"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:layout_marginTop="@dimen/margin_4"
+                    android:textSize="14sp"
+                    android:layout_toEndOf="@+id/civProfileFragmentProfilePic"
+                    android:layout_toRightOf="@+id/civProfileFragmentProfilePic"
+                    tools:text="Festival lover, transient soul, capturing music on my iPhone." />
+
+                <TextView
+                    android:id="@+id/tvProfileFragmentUserSite"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvProfileFragmentUserDesc"
+                    android:layout_marginLeft="@dimen/margin_16"
+                    android:textSize="14sp"
+                    android:layout_toEndOf="@+id/civProfileFragmentProfilePic"
+                    android:layout_toRightOf="@+id/civProfileFragmentProfilePic"
+                    android:textColor="@color/colorPrimary"
+                    android:textColorLink="@color/colorPrimary"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    tools:text="http://www.dannypugh.com" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1.5">
+
+                <TextView
+                    android:id="@+id/tvProfileFragmentLeaderboardText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/padding_4"
+                    android:paddingBottom="@dimen/padding_8"
+                    android:paddingRight="@dimen/padding_8"
+                    android:paddingLeft="@dimen/padding_16"
+                    android:text="TOP VIDEOS"
+                    android:textSize="12sp"
+                    android:textColor="@color/secondaryText" />
+
+                <ListView
+                    android:id="@+id/lvProfileFragmentLeaderboardList"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tvProfileFragmentLeaderboardText" />
+
+                <ImageView
+                    android:id="@+id/ivProfileFragmentMore"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_below="@+id/lvProfileFragmentLeaderboardList"
+                    android:clickable="true"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:padding="@dimen/padding_4"
+                    android:src="@drawable/load" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvProfileFragmentNewestText"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="0.5"
+                android:paddingTop="@dimen/padding_4"
+                android:paddingBottom="@dimen/padding_8"
+                android:paddingRight="@dimen/padding_8"
+                android:paddingLeft="@dimen/padding_16"
+                android:text="NEWEST VIDEOS"
+                android:textSize="12sp"
+                android:textColor="@color/campTitle" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <GridView
+                    android:id="@+id/gridviewProfileFragmentNewestVideo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.4"
+                    android:columnWidth="200dp"
+                    android:gravity="center"
+                    android:horizontalSpacing="0dp"
+                    android:numColumns="3"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="0dp" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/ivProfileFragmentNewestMore"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_below="@+id/gridviewCompaignFragmentNewestVideo"
+                android:layout_weight="0.1"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/padding_4"
+                android:src="@drawable/load" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+</LinearLayout>

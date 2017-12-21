@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/padding_8">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/ivDialogUnfollowUserPic"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/user_default"
+        android:layout_marginTop="@dimen/margin_8"
+        app:civ_border_color="#FF000000"
+        app:civ_border_width="0dp" />
+
+    <!--<ImageView-->
+        <!--android:id="@+id/ivDialogUnfollowUserPic"-->
+        <!--android:layout_width="100dp"-->
+        <!--android:layout_height="100dp"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:src="@drawable/user_default"-->
+        <!--android:layout_marginTop="@dimen/margin_8"/>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Danny paugh"
+        android:gravity="center"
+        android:layout_below="@+id/ivDialogUnfollowUserPic"
+        android:id="@+id/tvDialogUnfollowUserName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/margin_4"
+        android:layout_marginBottom="@dimen/margin_8"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDialogUnfollowUserName"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Cancel"
+            android:id="@+id/btnDialogUnfollowCancel"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Unfollow"
+            android:id="@+id/btnDialogUnfollow"
+            android:background="@android:color/transparent"
+            android:foreground="?android:attr/selectableItemBackground"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

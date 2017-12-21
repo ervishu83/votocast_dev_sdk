@@ -1,0 +1,121 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/whiteText"
+    android:orientation="vertical"
+    tools:context="fragments.SearchFragment">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/searchToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay">
+
+        <LinearLayout
+            android:id="@+id/llSearchResultLayer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="3">
+
+            <EditText
+                android:id="@+id/etSearchRsultFragmentText"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/margin_8"
+                android:layout_weight="2.3"
+                android:background="@drawable/search_edittext_back"
+                android:drawableLeft="@drawable/search_white"
+                android:drawablePadding="@dimen/padding_8"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:hint="Search"
+                android:paddingLeft="@dimen/padding_16"
+                android:textColor="@color/whiteText"
+                android:textColorHint="@color/whiteText" />
+
+            <TextView
+                android:id="@+id/btnSearchResultFragmentCancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="0.7"
+                android:background="@android:color/transparent"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="Cancel"
+                android:textColor="@color/whiteText"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/etSearchbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/margin_8"
+            android:background="@drawable/search_edittext_back"
+            android:clickable="true"
+            android:focusable="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:gravity="center"
+            android:hint="search"
+            android:textColor="@color/whiteText"
+            android:textColorHint="@color/whiteText" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@+id/listSearchResultFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/mainSearchDetailView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TabLayout
+                android:id="@+id/tab_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/whiteText"
+                android:elevation="6dp"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@color/colorPrimaryDark"
+                app:tabTextColor="@color/unselectedTab" />
+
+            <ListView
+                android:id="@+id/lvSeatchFragmentVideoList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <ListView
+                android:id="@+id/lvSeatchFragmentCampaignVideoList"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+</LinearLayout>

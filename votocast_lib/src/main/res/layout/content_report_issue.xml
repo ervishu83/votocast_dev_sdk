@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.votocast.votocast.ReportIssueActivity"
+    tools:showIn="@layout/activity_report_issue">
+
+    <EditText
+        android:id="@+id/evReportIssues"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="9"
+        android:background="@color/colorAccent"
+        android:hint="Enter some text..."
+        android:gravity="start"
+        android:padding="@dimen/padding_8"
+        android:textColor="@color/whiteText"
+        android:textColorHint="@color/settingHint"
+        android:textSize="14sp"/>
+
+    <!--<View-->
+        <!--android:layout_below="@+id/evReportIssues"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="3dp"-->
+        <!--android:background="@color/edittextBack" />-->
+
+</RelativeLayout>

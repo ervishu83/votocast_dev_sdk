@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:weightSum="4"
+    android:orientation="horizontal"
+    android:id="@+id/llCommentListItem"
+    android:layout_marginBottom="@dimen/margin_4">
+
+    <com.apradanas.simplelinkabletext.LinkableTextView
+        android:id="@+id/tvListItemComment"
+        android:layout_width="0dp"
+        android:layout_weight="3"
+        android:layout_height="wrap_content"
+        tools:text="Fun in the sun, best weekend of the year. #vc_coachella2016"
+        android:textColor="@color/homeText"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tvListItemCommentDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        tools:text="11 sec"
+        android:textSize="14sp"
+        android:textColor="@color/homeSubTitle"
+        android:gravity="end"/>
+</LinearLayout>

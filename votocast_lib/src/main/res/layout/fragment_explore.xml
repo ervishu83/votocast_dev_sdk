@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/whiteText">
+
+    <ScrollView
+        android:id="@+id/scrollExplore"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/rlListItemOne"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/whiteText"
+                android:clickable="true"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:padding="@dimen/padding_8">
+
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/civListItemVotocastProfilePic"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/campaign_icon"
+                    app:civ_border_color="#FF000000"
+                    app:civ_border_width="0dp" />
+
+                <TextView
+                    android:id="@+id/tvListItemProfileName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toEndOf="@+id/civListItemVotocastProfilePic"
+                    android:layout_toRightOf="@+id/civListItemVotocastProfilePic"
+                    android:paddingLeft="@dimen/padding_4"
+                    android:textColor="@color/homeTitle"
+                    android:textSize="14sp"
+                    tools:text="beyoncefan" />
+
+                <TextView
+                    android:id="@+id/tvListItemProfileFollower"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvListItemProfileName"
+                    android:layout_toEndOf="@+id/civListItemVotocastProfilePic"
+                    android:layout_toRightOf="@+id/civListItemVotocastProfilePic"
+                    android:paddingLeft="@dimen/padding_4"
+                    android:textColor="@color/homeSubTitle"
+                    android:textSize="11sp"
+                    tools:text="13,456 followers" />
+
+                <ImageView
+                    android:id="@+id/ivListItemProfileSettingIcon"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:src="@drawable/person_orange" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlListItemTwoExplore"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/rlListItemOne"
+                android:background="@color/opacityBottom"
+                android:clickable="true">
+
+                <FrameLayout
+                    android:id="@+id/frameExplore"
+                    android:clickable="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <fm.jiecao.jcvideoplayer_lib.JCVideoPlayer
+                        android:id="@+id/videoplayerExplore"
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp"
+                        android:orientation="vertical" />
+
+                    <!--<VideoView-->
+                        <!--android:id="@+id/videoviewHomeVideo"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:layout_gravity="fill|fill_horizontal"-->
+                        <!--android:visibility="gone" />-->
+
+                    <!--<com.volokh.danylo.video_player_manager.ui.VideoPlayerView-->
+                        <!--android:id="@+id/player"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:visibility="gone" />-->
+
+                    <!--<com.volokh.danylo.video_player_manager.ui.VideoPlayerView-->
+                        <!--android:id="@+id/videoviewExploreVideoPlayer"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:layout_gravity="center"-->
+                        <!--android:clickable="true" />-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/coverExplore"-->
+                        <!--android:layout_width="fill_parent"-->
+                        <!--android:layout_height="250dp"-->
+                        <!--android:background="@drawable/backimage"-->
+                        <!--android:scaleType="fitXY"-->
+                        <!--android:visibility="visible"/>-->
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="250dp">
+
+                        <ImageView
+                            android:id="@+id/ivExploreBanner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentTop="true"
+                            android:src="@drawable/rank10" />
+
+                        <LinearLayout
+                            android:id="@+id/llExploreVideoStrip"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_centerInParent="true"
+                            android:weightSum="5"
+                            android:visibility="gone" >
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/ivExploreVidPrevious"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:src="@android:drawable/ic_media_previous"-->
+                                <!--android:visibility="visible" />-->
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1">
+                            </RelativeLayout>
+
+                            <!--<ImageView-->
+                                <!--android:id="@+id/ivExploreVidNext"-->
+                                <!--android:layout_width="0dp"-->
+                                <!--android:layout_weight="2"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:src="@android:drawable/ic_media_next"-->
+                                <!--android:visibility="visible" />-->
+
+                        </LinearLayout>
+
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <LinearLayout
+                            android:id="@+id/llVotocastLikeCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/padding_16"
+                            android:paddingLeft="@dimen/padding_16"
+                            android:paddingRight="@dimen/padding_8">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/done_white" />
+
+                            <TextView
+                                android:id="@+id/tvListItemVideoLike"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_8"
+                                android:textColor="@color/whiteText"
+                                android:textSize="14sp"
+                                tools:text="756" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llVotocastPlayCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/llVotocastLikeCount"
+                            android:layout_toRightOf="@+id/llVotocastLikeCount"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/padding_16"
+                            android:paddingLeft="@dimen/padding_16"
+                            android:paddingRight="@dimen/padding_8"
+                            android:visibility="invisible">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/play_white"
+                                android:visibility="invisible"/>
+
+                            <TextView
+                                android:id="@+id/tvListItemVideoPlay"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_8"
+                                android:textColor="@color/whiteText"
+                                android:textSize="14sp"
+                                tools:text=""
+                                android:visibility="invisible"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llVotocastShareCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/llVotocastPlayCount"
+                            android:layout_toRightOf="@+id/llVotocastPlayCount"
+                            android:gravity="center"
+                            android:orientation="horizontal"
+                            android:paddingBottom="@dimen/padding_16"
+                            android:paddingLeft="@dimen/padding_16"
+                            android:paddingRight="@dimen/padding_8">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/share_white" />
+
+                            <TextView
+                                android:id="@+id/tvListItemVideoShare"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="@dimen/margin_8"
+                                android:textColor="@color/whiteText"
+                                android:textSize="14sp"
+                                tools:text="756" />
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:id="@+id/ivExploreVidPrevious"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@android:drawable/ic_media_previous"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/llVotocastShareCount"
+                            android:layout_toRightOf="@+id/llVotocastShareCount"
+                            android:gravity="center"
+                            android:layout_marginLeft="@dimen/margin_8"
+                            android:paddingBottom="@dimen/padding_8"
+                            android:paddingLeft="@dimen/padding_4"
+                            android:paddingRight="@dimen/padding_4"/>
+
+                        <ImageView
+                            android:id="@+id/ivExploreVidNext"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:layout_alignParentBottom="true"
+                            android:layout_toEndOf="@+id/ivExploreVidPrevious"
+                            android:layout_toRightOf="@+id/ivExploreVidPrevious"
+                            android:gravity="center"
+                            android:paddingBottom="@dimen/padding_8"
+                            android:paddingRight="@dimen/padding_4"/>
+
+                        <ImageView
+                            android:id="@+id/ivExploreVideoMute"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:clickable="true"
+                            android:foreground="?android:attr/selectableItemBackground"
+                            android:paddingBottom="@dimen/padding_16"
+                            android:paddingLeft="@dimen/padding_4"
+                            android:paddingRight="@dimen/padding_16"
+                            android:paddingTop="@dimen/padding_4"
+                            android:src="@drawable/mute"
+                            android:visibility="gone"/>
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </FrameLayout>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlListItemThree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlListItemTwoExplore"
+                android:paddingBottom="@dimen/padding_8"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16"
+                android:paddingTop="@dimen/padding_8">
+
+                <LinearLayout
+                    android:id="@+id/llListItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvListItemProfileVote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="VOTE"
+                        android:textColor="@color/homeVoteShare"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvListItemProfileShare"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_16"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="SHARE"
+                        android:textColor="@color/homeVoteShare"
+                        android:textSize="11sp" />
+
+                    <TextView
+                        android:id="@+id/tvListItemProfileComment"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_16"
+                        android:clickable="true"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:text="COMMENT"
+                        android:textColor="@color/homeVoteShare"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/ivListItemDots"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_above="@+id/viewListItem"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="center"
+                    android:clickable="true"
+                    android:src="@drawable/more" />
+
+                <View
+                    android:id="@+id/viewListItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.2dp"
+                    android:layout_below="@+id/llListItem"
+                    android:layout_marginBottom="@dimen/margin_8"
+                    android:layout_marginTop="@dimen/margin_8"
+                    android:background="@color/homeDivider" />
+
+                <!--<TextView-->
+                <!--android:id="@+id/tvListItemProfileDesc"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/viewListItem"-->
+                <!--android:textColor="@color/homeText"-->
+                <!--android:text="Okay ladies now let's get information! Please vote for me, I'm in the rank10 10! #VC_Superbowl2016"-->
+                <!--android:textSize="15sp" />-->
+
+                <com.apradanas.simplelinkabletext.LinkableTextView
+                    android:id="@+id/tvListItemExploreDesc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewListItem"
+                    android:textColor="@color/homeText"
+                    android:textSize="14sp"
+                    tools:text="Fun in the sun, best weekend of the year. #vc_coachella2016" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlListItemFour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rlListItemThree"
+                android:paddingLeft="@dimen/padding_16"
+                android:paddingRight="@dimen/padding_16">
+
+                <ListView
+                    android:layout_marginBottom="@dimen/margin_4"
+                    android:id="@+id/listComments"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:dividerHeight="0dp" />
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

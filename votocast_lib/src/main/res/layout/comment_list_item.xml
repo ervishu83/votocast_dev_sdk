@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlCommentVideoDetail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin_8">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civListCommentVideoPic"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:src="@drawable/user_default"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="0dp" />
+
+        <TextView
+            android:id="@+id/tvListCommentUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="@dimen/margin_8"
+            android:layout_toEndOf="@+id/civListCommentVideoPic"
+            android:layout_toRightOf="@+id/civListCommentVideoPic"
+            tools:text="username"
+            android:textColor="@color/homeTitle"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tvListCommentDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            tools:text="7m"
+            android:layout_marginRight="@dimen/margin_4"
+            android:textColor="@color/homeSubTitle"
+            android:textSize="14sp"/>
+
+        <TextView
+            android:id="@+id/tvListCommentDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tvListCommentUsername"
+            android:layout_alignStart="@+id/tvListCommentUsername"
+            android:layout_below="@+id/tvListCommentUsername"
+            android:layout_marginTop="@dimen/margin_4"
+            tools:text="This is description"
+            android:textColor="@color/homeSubTitle"
+            android:textSize="11sp"/>
+
+    </RelativeLayout>
+</LinearLayout>

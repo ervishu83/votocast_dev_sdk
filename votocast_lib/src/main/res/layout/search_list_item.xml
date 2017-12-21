@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?attr/actionBarSize"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/whiteText"
+    android:paddingBottom="@dimen/padding_8"
+    android:paddingLeft="@dimen/padding_16"
+    android:paddingRight="@dimen/padding_16"
+    android:paddingTop="@dimen/padding_8"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/rlSearchItem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="10">
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="8.5"
+            android:layout_height="match_parent"
+            android:id="@+id/rlSearchResultData"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/civListItemSearchMainImage"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:src="@drawable/event1"
+                app:civ_border_color="#FF000000"
+                app:civ_border_width="0dp" />
+
+            <TextView
+                android:id="@+id/tvListItemSearchMainText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/civListItemSearchMainImage"
+                android:layout_toRightOf="@+id/civListItemSearchMainImage"
+                android:paddingLeft="@dimen/padding_8"
+                tools:text="beyoncefan"
+                android:textSize="14sp"
+                android:textColor="@color/homeTitle"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/tvListItemSearchSubText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvListItemSearchMainText"
+                android:layout_toEndOf="@+id/civListItemSearchMainImage"
+                android:layout_toRightOf="@+id/civListItemSearchMainImage"
+                android:paddingLeft="@dimen/padding_8"
+                tools:text="13,456 followers"
+                android:textColor="@color/homeSubTitle"
+                android:textSize="11sp"  />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_weight="1.5"
+            android:layout_height="match_parent"
+            android:id="@+id/rlSearchResultFollow"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/ivListItemSearchSubImage"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/award_grey"
+                android:layout_marginRight="@dimen/margin_4"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

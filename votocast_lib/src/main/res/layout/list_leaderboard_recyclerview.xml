@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:id="@+id/rlVideoClickLink">
+
+    <FrameLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:id="@+id/frameListLeaderboardImage">
+
+        <ImageView
+            android:id="@+id/ivListLeaderboardImage"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/backimage"
+            android:clickable="true"/>
+
+        <ImageView
+            android:id="@+id/ivListBanner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/topsmall"
+            android:layout_gravity="right|top" />
+
+    </FrameLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:layout_toEndOf="@+id/frameListLeaderboardImage"
+        android:layout_toRightOf="@+id/frameListLeaderboardImage"
+        android:paddingLeft="@dimen/padding_16"
+        android:paddingRight="@dimen/padding_8">
+
+        <TextView
+            android:id="@+id/tvListLeaderboardName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="coachella_lover"
+            android:textSize="14sp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:textColor="@color/campListTitle"
+            android:layout_marginTop="@dimen/margin_4"/>
+
+        <TextView
+            android:id="@+id/tvListLeaderboardFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvListLeaderboardName"
+            tools:text="122,328 followers"
+            android:textSize="11sp"
+            android:gravity="top"
+            android:textColor="@color/campListSubTitle"/>
+
+        <com.apradanas.simplelinkabletext.LinkableTextView
+            android:id="@+id/tvListLeaderboardDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvListLeaderboardFollower"
+            tools:text="Fun in the sun, best weekend of the year. #vc_coachella2016"
+            android:textColor="@color/campListText"
+            android:layout_marginTop="@dimen/margin_8"
+            android:layout_marginBottom="@dimen/margin_4"
+            android:textSize="14sp"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvListLeaderboardDesc"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/margin_4">
+
+            <LinearLayout
+                android:id="@+id/llVotocastLikeCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_4"
+                android:paddingRight="@dimen/padding_8"
+                android:layout_centerVertical="true"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:src="@drawable/done_gery"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tvListLeaderboardLike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="756"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:textColor="@color/campListSubTitle"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llVotocastPlayCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_8"
+                android:paddingRight="@dimen/padding_8"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/llVotocastLikeCount"
+                android:layout_toRightOf="@+id/llVotocastLikeCount">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:src="@drawable/play_grey"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tvListLeaderboardPlay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="756"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:textColor="@color/campListSubTitle"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llVotocastShareCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="@dimen/padding_8"
+                android:paddingRight="@dimen/padding_8"
+                android:layout_centerVertical="true"
+                android:layout_toEndOf="@+id/llVotocastPlayCount"
+                android:layout_toRightOf="@+id/llVotocastPlayCount">
+
+                <ImageView
+                    android:layout_width="11dp"
+                    android:layout_height="11dp"
+                    android:src="@drawable/share_grey"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+                <TextView
+                    android:id="@+id/tvListLeaderboardShare"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="756"
+                    android:textSize="14sp"
+                    android:layout_marginLeft="@dimen/margin_4"
+                    android:textColor="@color/campListSubTitle"
+                    android:layout_gravity="center"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvListLeaderboardLike"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/tvListLeaderboardName"-->
+                <!--android:text="726"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/secondaryText"-->
+                <!--android:drawableLeft="@android:drawable/ic_media_play"/>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tvListLeaderboardPlay"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/tvListLeaderboardName"-->
+                <!--android:text="726"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/secondaryText"-->
+                <!--android:drawableLeft="@android:drawable/ic_media_play"/>-->
+            <!--<TextView-->
+                <!--android:id="@+id/tvListLeaderboardShare"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/tvListLeaderboardName"-->
+                <!--android:text="726"-->
+                <!--android:gravity="center"-->
+                <!--android:textColor="@color/secondaryText"-->
+                <!--android:drawableLeft="@android:drawable/ic_menu_share"/>-->
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>

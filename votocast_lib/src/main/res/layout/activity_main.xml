@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    android:fitsSystemWindows="true"
+    tools:context="com.votocast.votocast.MainActivity"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbarMain"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:popupTheme="@style/AppTheme.PopupOverlay" >
+
+        <RelativeLayout
+            android:id="@+id/rlToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/toolbar_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_back"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="visible"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_toRightOf="@+id/toolbar_back_button"
+                android:layout_toEndOf="@+id/toolbar_back_button"
+                android:layout_toLeftOf="@+id/toolbar_delete_button"
+                android:layout_toStartOf="@+id/toolbar_delete_button">
+
+                <me.grantland.widget.AutofitTextView
+                    android:id="@+id/toolbarTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="abcd"
+                    android:textColor="@color/whiteText"
+                    android:textSize="@dimen/toolbarText"
+                    android:visibility="visible"
+                    android:maxLines="1"
+                    autofit:minTextSize="14sp"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/toolbar_delete_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_delete"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:visibility="invisible"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="15dp" />
+
+            <!--<TextView-->
+            <!--android:id="@+id/toolbarTitle"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--tools:text="Title"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textColor="@color/whiteText"-->
+            <!--android:textSize="@dimen/toolbarText"-->
+            <!--android:visibility="gone"/>-->
+
+            <ImageView
+                android:id="@+id/toolbarLogo"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:src="@drawable/logo"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/toolbarLogo1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:src="@drawable/logo"
+            android:visibility="gone"/>
+
+    </android.support.v7.widget.Toolbar>
+
+    <include layout="@layout/content_main" />
+
+</LinearLayout>

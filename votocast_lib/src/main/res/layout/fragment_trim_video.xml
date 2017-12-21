@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/detailPopupBack"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="top"
+        android:background="@color/detailPopupBack"
+        android:orientation="horizontal"
+        android:weightSum="4">
+
+        <ImageView
+            android:id="@+id/trimdialogCancelBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_chevron_left_black_24dp"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"/>
+
+        <TextView
+            android:id="@+id/tvTrimVideoTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:text="TRIM + CROP"
+            android:textColor="@color/whiteText"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/trimdialogCropBtn"
+            android:layout_width="0dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:src="@drawable/ic_content_cut_black_24dp"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/trimdialogNextBtn"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:src="@drawable/ic_chevron_right" />
+
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <VideoView
+            android:id="@+id/videoviewTrimVideo"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            android:background="@color/colorAccent"/>
+
+        <TextView
+            android:id="@+id/tvTrimVideoDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:1 - 0:30"
+            android:background="@color/opacityBottom"
+            android:textColor="@color/whiteText"
+            android:visibility="gone"
+            android:layout_gravity="bottom|center_horizontal"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:scrollbars="horizontal">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvVideoCropper"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="@dimen/margin_4" />
+
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llTrimVideoPopup"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            android:layout_marginTop="@dimen/margin_8"
+            android:background="@drawable/border_back"
+            android:visibility="gone">
+        </LinearLayout>
+
+        <SeekBar
+            android:id="@+id/rsbVideoCropperMain"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            android:visibility="gone"/>
+
+        <customView.rangeseekbar.RangeSeekBar
+            android:id="@+id/rsbVideoCropper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left|top"
+            android:layout_marginTop="@dimen/margin_64"
+            android:layout_marginLeft="@dimen/margin_16"
+            android:layout_marginRight="@dimen/margin_16"
+            app:thumbNormal="@drawable/btn_circle"
+            app:thumbPressed="@drawable/btn_circle"/>
+
+        <TextView
+            android:id="@+id/tvTrimTimeDiff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="time"
+            android:layout_marginTop="@dimen/margin_8"
+            android:textColor="@android:color/darker_gray"
+            android:layout_gravity="center" />
+
+    </FrameLayout>
+
+</LinearLayout>
