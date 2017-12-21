@@ -17,14 +17,4 @@
         android:background="#4CAF50"
         android:textColor="#fff"/>
 
-    <Button
-        android:id="@+id/btnO2life"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnVotocast"
-        android:layout_centerHorizontal="true"
-        android:padding="8dp"
-        android:text="O2Life"
-        android:visibility="gone"/>
-
 </RelativeLayout>
