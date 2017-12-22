@@ -23,7 +23,8 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-       compile 'com.github.ervishu83.votocast_dev_sdk:jcvideoplayer-lib:v1.1'
+    compile 'com.github.ervishu83.votocast_dev_sdk:jcvideoplayer-lib:v1.8'
+    compile 'com.github.ervishu83.votocast_dev_sdk:votocast_lib:v1.8'
 }
 ```
 
@@ -35,10 +36,12 @@ Okay seems like you integrated the library in your project but how do you use it
 Load native library in your activity on click event of button:
 
 ```
+      import libClass.votocastLib;
+      
       btnVotocast.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(HomeActivity.this, SplashActivity.class));
+                new votocastLib(MainActivity.this);
             }
         });
  ```
