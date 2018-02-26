@@ -86,19 +86,19 @@ import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.parse.entity.mime.MultipartEntity;
 import com.parse.entity.mime.content.ByteArrayBody;
 import com.parse.entity.mime.content.StringBody;
-import com.votocast.votocast.ChangePasswordActivity;
-import com.votocast.votocast.HelpActivity;
-import com.votocast.votocast.LoginActivity;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_ChangePasswordActivity;
+import com.votocast.votocast.VC_HelpActivity;
+import com.votocast.votocast.VC_LoginActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
-import com.votocast.votocast.NoticationActivity;
-import com.votocast.votocast.PrivacyPolicyActivity;
+import com.votocast.votocast.VC_NoticationActivity;
+import com.votocast.votocast.VC_PrivacyPolicyActivity;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
-import com.votocast.votocast.ReportIssueActivity;
-import com.votocast.votocast.RulesActivity;
-import com.votocast.votocast.SupportActivity;
-import com.votocast.votocast.TermsOfServiceActivity;
+import com.votocast.votocast.VC_ReportIssueActivity;
+import com.votocast.votocast.VC_RulesActivity;
+import com.votocast.votocast.VC_SupportActivity;
+import com.votocast.votocast.VC_TermsOfServiceActivity;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -271,7 +271,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
     long totalSize = 0;
 
     // ----------- complete edit profile ------------------
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = VC_MainActivity.class.getSimpleName();
     private static final int REQUEST_INVITE = 0;
 
     // [START define_variables]
@@ -299,8 +299,8 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
         t.setScreenName("Settings");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
         iv.setVisibility(View.GONE);
@@ -317,7 +317,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
 
         ButterKnife.bind(this, v);
         setHasOptionsMenu(true);
-//        ((MainActivity) getActivity()).setActionBarTitle("SETTINGS");
+//        ((VC_MainActivity) getActivity()).setActionBarTitle("SETTINGS");
 
 //        if(savedInstanceState != null)
 //            token = savedInstanceState.getString("token");
@@ -395,13 +395,13 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
 
                         @Override
                         public void onCompleted(JSONObject object, GraphResponse response) {
-                            Log.i("LoginActivity", response.toString());
+                            Log.i("VC_LoginActivity", response.toString());
                             // Get facebook data from login
 
                             JSONObject user = (JSONObject) response.getJSONObject();
                             try {
                                 String email = user.getString("email");
-                                Log.i("LoginActivity", object.toString());
+                                Log.i("VC_LoginActivity", object.toString());
 
                                 fbMetadata = user.toString();
                                 new addFbToken(accessToken).execute();
@@ -411,7 +411,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
                                 Log.i("LoginActivity1", e.toString());
                                 Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", getActivity());
 //                            LoginManager.getInstance().logOut();
-//                            Toast.makeText(LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(VC_LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -727,17 +727,17 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
     void fnLogout() {
         Constant.saveSharedData(getActivity(), "pref_login", "");
         getActivity().finish();
-        startActivity(new Intent(getActivity(), LoginActivity.class));
+        startActivity(new Intent(getActivity(), VC_LoginActivity.class));
     }
 
     @OnClick(R2.id.llSettingChangePwd)
     void changePwd() {
-        startActivity(new Intent(getActivity(), ChangePasswordActivity.class));
+        startActivity(new Intent(getActivity(), VC_ChangePasswordActivity.class));
     }
 
     @OnClick(R2.id.llSettingNotification)
     void notification() {
-        startActivity(new Intent(getActivity(), NoticationActivity.class));
+        startActivity(new Intent(getActivity(), VC_NoticationActivity.class));
     }
 
     @Override
@@ -966,7 +966,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
 
                                         JSONObject userObj = jo.getJSONObject("user");
 
-//                                        ((MainActivity) getActivity()).setActionBarTitle(compObj.getString("title"));
+//                                        ((VC_MainActivity) getActivity()).setActionBarTitle(compObj.getString("title"));
 
                                         evProfileName.setText(userObj.getString("name"));
                                         name = userObj.getString("name");
@@ -1202,32 +1202,32 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
 
     @OnClick(R2.id.llSettingHelp)
     void fnHelp() {
-        startActivity(new Intent(getActivity(), HelpActivity.class));
+        startActivity(new Intent(getActivity(), VC_HelpActivity.class));
     }
 
     @OnClick(R2.id.llSettingRules)
     void fnRules() {
-        startActivity(new Intent(getActivity(), RulesActivity.class));
+        startActivity(new Intent(getActivity(), VC_RulesActivity.class));
     }
 
     @OnClick(R2.id.llSettingTerms)
     void fnTerms() {
-        startActivity(new Intent(getActivity(), TermsOfServiceActivity.class));
+        startActivity(new Intent(getActivity(), VC_TermsOfServiceActivity.class));
     }
 
     @OnClick(R2.id.llSettingPrivacy)
     void fnPrivacyPolicy() {
-        startActivity(new Intent(getActivity(), PrivacyPolicyActivity.class));
+        startActivity(new Intent(getActivity(), VC_PrivacyPolicyActivity.class));
     }
 
     @OnClick(R2.id.llSettingReports)
     void fnSupport() {
-        startActivity(new Intent(getActivity(), SupportActivity.class));
+        startActivity(new Intent(getActivity(), VC_SupportActivity.class));
     }
 
     @OnClick(R2.id.llSettingReportsIssues)
     void fnReportIssues() {
-        startActivity(new Intent(getActivity(), ReportIssueActivity.class));
+        startActivity(new Intent(getActivity(), VC_ReportIssueActivity.class));
     }
 
     // ---------------- Invite friends ----------

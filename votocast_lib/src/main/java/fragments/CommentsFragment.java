@@ -42,12 +42,11 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
 
-import org.apache.commons.lang3.StringUtils;
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
@@ -121,8 +120,8 @@ public class CommentsFragment extends Fragment implements View.OnClickListener {
         t.setScreenName("Comment");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
         toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
         iv.setVisibility(View.GONE);

@@ -307,7 +307,7 @@ public class Constant {
                             public void onClick(DialogInterface dialog, int id) {
                                 // if this button is clicked, close
                                 // current activity
-                                //MainActivity.this.finish();
+                                //VC_MainActivity.this.finish();
 
 //                                ((Activity) context).finish();
 
@@ -342,7 +342,7 @@ public class Constant {
                             public void onClick(DialogInterface dialog, int id) {
                                 // if this button is clicked, close
                                 // current activity
-                                //MainActivity.this.finish();
+                                //VC_MainActivity.this.finish();
 
                             }
                         });

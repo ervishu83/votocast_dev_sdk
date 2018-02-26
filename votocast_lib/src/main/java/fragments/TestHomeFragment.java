@@ -38,7 +38,6 @@ import android.widget.TextView;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -61,7 +60,7 @@ import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.loopj.android.http.RequestParams;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
@@ -112,8 +111,8 @@ public class TestHomeFragment extends Fragment {
         t.setScreenName("Home");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
 
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);

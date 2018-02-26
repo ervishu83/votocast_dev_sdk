@@ -43,11 +43,11 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
-import com.votocast.votocast.ReportsActivity;
+import com.votocast.votocast.VC_ReportsActivity;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -169,8 +169,8 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
         t.setScreenName("Explore");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity)  getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity)  getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity)  getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity)  getActivity()).getSupportActionBar().show();
 
         Toolbar toolbar = (Toolbar)  getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
@@ -240,7 +240,7 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
                         JCVideoPlayer.releaseAllVideos();
                         if (from.equals("video")) {
 //                            Log.i("fromExplore", from + "- if");
-                            TabLayout.Tab tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+                            TabLayout.Tab tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
                             tab.select();
                         } else {
 //                            Log.i("fromExplore", from + "- else");
@@ -403,7 +403,7 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
             JCVideoPlayer.releaseAllVideos();
             if (from.equals("video")) {
                 Log.i("fromExplore", from + "- if");
-                TabLayout.Tab tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+                TabLayout.Tab tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
                 tab.select();
             } else {
                 Log.i("fromExplore", from + "- else");
@@ -480,7 +480,7 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
                                         JCVideoPlayer.releaseAllVideos();
                                         if (from.equals("video")) {
                                             Log.i("fromExplore", from + "- if");
-                                            TabLayout.Tab tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+                                            TabLayout.Tab tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
                                             tab.select();
                                         } else {
                                             Log.i("fromExplore", from + "- else");
@@ -1258,7 +1258,7 @@ public class ExploreFragment extends Fragment implements View.OnClickListener {
         tvShareReports.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent m1 = new Intent(getActivity(), ReportsActivity.class);
+                Intent m1 = new Intent(getActivity(), VC_ReportsActivity.class);
                 m1.putExtra("vidId", vidId);
                 m1.putExtra("report", reportList);
                 startActivity(m1);

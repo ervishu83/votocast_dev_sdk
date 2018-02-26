@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.votocast.votocast.ContestRulesActivity">
+    tools:context="com.votocast.votocast.VC_ContestRulesActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarContestRules"

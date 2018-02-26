@@ -26,7 +26,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class PrivacyPolicyActivity extends AppCompatActivity {
+public class VC_PrivacyPolicyActivity extends AppCompatActivity {
 
     @BindView(R2.id.webPolicy)WebView webPolicy;
     ProgressHUD mProgressHUD;
@@ -83,7 +83,7 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
                 if (mProgressHUD.isShowing()) {
                     mProgressHUD.dismiss();
                 }
-                MyUtils.showToast(PrivacyPolicyActivity.this,"Something goes wrong!");
+                MyUtils.showToast(VC_PrivacyPolicyActivity.this,"Something goes wrong!");
             }
         });
         webPolicy.loadUrl("http://votocast.com/privacypolicy");
@@ -111,12 +111,12 @@ public class PrivacyPolicyActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(PrivacyPolicyActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_PrivacyPolicyActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(PrivacyPolicyActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_PrivacyPolicyActivity.this).reportActivityStop(this);
     }
 }

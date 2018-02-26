@@ -26,16 +26,18 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class TermsOfServiceActivity extends AppCompatActivity {
+public class VC_HelpActivity extends AppCompatActivity {
 
-    @BindView(R2.id.webTerms) WebView webTerms;
+    @BindView(R2.id.webHelp)WebView webHelp;
     ProgressHUD mProgressHUD;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terms_of_service);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarTermsService);
+        setContentView(R.layout.activity_help);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHelp);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
         ButterKnife.bind(this);
         toolbar.setBackgroundColor(Color.parseColor(Constant.colorPrimary));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -45,16 +47,16 @@ public class TermsOfServiceActivity extends AppCompatActivity {
         }
 
         Tracker t = ((MyAppTracker)this.getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);
-        t.setScreenName("Terms of Service");
+        t.setScreenName("Help");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        WebSettings settings = webTerms.getSettings();
-        settings.setJavaScriptEnabled(false);
-        webTerms.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
+        WebSettings settings = webHelp.getSettings();
+        settings.setJavaScriptEnabled(true);
+        webHelp.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 
         if (Build.VERSION.SDK_INT >= 19) // KITKAT
         {
-            webTerms.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webHelp.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
 
         mProgressHUD = ProgressHUD.show(this, "", false, false, new DialogInterface.OnCancelListener() {
@@ -63,7 +65,7 @@ public class TermsOfServiceActivity extends AppCompatActivity {
             }
         });
 
-        webTerms.setWebViewClient(new WebViewClient() {
+        webHelp.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
 //                Log.i(TAG, "Processing webview url click...");
                 view.loadUrl(url);
@@ -81,11 +83,10 @@ public class TermsOfServiceActivity extends AppCompatActivity {
                 if (mProgressHUD.isShowing()) {
                     mProgressHUD.dismiss();
                 }
-                MyUtils.showToast(TermsOfServiceActivity.this,"Something goes wrong!");
+                MyUtils.showToast(VC_HelpActivity.this,"Something goes wrong!");
             }
         });
-        webTerms.loadUrl("http://votocast.com/termsofservice");
-
+        webHelp.loadUrl("http://votocast.com/");
     }
 
     @OnClick(R2.id.toolbar_back_button)void fnBack(){
@@ -110,12 +111,13 @@ public class TermsOfServiceActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(TermsOfServiceActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_HelpActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(TermsOfServiceActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_HelpActivity.this).reportActivityStop(this);
     }
+
 }

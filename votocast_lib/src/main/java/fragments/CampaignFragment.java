@@ -28,7 +28,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -64,8 +63,8 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 import com.squareup.picasso.Picasso;
-import com.votocast.votocast.ContestRulesActivity;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_ContestRulesActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
@@ -212,8 +211,8 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
 //        t.setScreenName("Campaign");
 //        t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
         iv.setVisibility(View.GONE);
@@ -258,7 +257,7 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
             getCampId = savedInstanceState.getString("getCampId");
             tvCompaignFragmentVideoCount.setFocusable(true);
             tvCompaignFragmentVideoCount.setFocusableInTouchMode(true);
-//            ((MainActivity) getActivity()).setActionBarTitle(savedInstanceState.getString("title"));
+//            ((VC_MainActivity) getActivity()).setActionBarTitle(savedInstanceState.getString("title"));
             toolText.setText(savedInstanceState.getString("title"));
             tvCompaignFragmentVideoCount.setText(savedInstanceState.getString("videos"));
             tvCompaignFragmentProducersCount.setText(savedInstanceState.getString("users"));
@@ -511,7 +510,7 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
                                                 tvCompaignFragmentRulesText.setOnClickListener(new View.OnClickListener() {
                                                     @Override
                                                     public void onClick(View view) {
-                                                        Intent m1 = new Intent(getActivity(), ContestRulesActivity.class);
+                                                        Intent m1 = new Intent(getActivity(), VC_ContestRulesActivity.class);
                                                         try {
                                                             m1.putExtra("ruleUrl", compObj.getString("campaign_rules"));
                                                         } catch (JSONException e) {
@@ -546,7 +545,7 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
                                             followCount = Integer.parseInt(jo.getString("followers"));
                                             camp_short_code = compObj.getString("short_code");
 
-//                                            ((MainActivity) getActivity()).setActionBarTitle(compObj.getString("title").toUpperCase());
+//                                            ((VC_MainActivity) getActivity()).setActionBarTitle(compObj.getString("title").toUpperCase());
                                             toolText.setText(compObj.getString("title").toUpperCase());
 //                                            toolText.setText("title");
                                             t.setScreenName("Campaign - " + compObj.getString("title"));
@@ -739,7 +738,7 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
                                                 tvCompaignFragmentRulesText.setOnClickListener(new View.OnClickListener() {
                                                     @Override
                                                     public void onClick(View view) {
-                                                        Intent m1 = new Intent(getActivity(), ContestRulesActivity.class);
+                                                        Intent m1 = new Intent(getActivity(), VC_ContestRulesActivity.class);
                                                         try {
                                                             m1.putExtra("ruleUrl", compObj.getString("campaign_rules"));
                                                         } catch (JSONException e) {
@@ -773,7 +772,7 @@ public class CampaignFragment extends Fragment implements View.OnClickListener {
                                             followCount = Integer.parseInt(jo.getString("followers"));
                                             camp_short_code = compObj.getString("short_code");
 
-//                                            ((MainActivity) getActivity()).setActionBarTitle(compObj.getString("title").toUpperCase());
+//                                            ((VC_MainActivity) getActivity()).setActionBarTitle(compObj.getString("title").toUpperCase());
                                             toolText.setText(compObj.getString("title").toUpperCase());
 //                                            toolText.setText("title");
 

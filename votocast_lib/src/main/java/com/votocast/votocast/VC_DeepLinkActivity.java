@@ -9,9 +9,9 @@ import android.widget.TextView;
 
 import com.google.android.gms.appinvite.AppInviteReferral;
 
-public class DeepLinkActivity extends AppCompatActivity implements View.OnClickListener {
+public class VC_DeepLinkActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private static final String TAG = DeepLinkActivity.class.getSimpleName();
+    private static final String TAG = VC_DeepLinkActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

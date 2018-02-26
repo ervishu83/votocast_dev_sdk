@@ -58,7 +58,7 @@ import com.volokh.danylo.video_player_manager.manager.VideoPlayerManager;
 import com.volokh.danylo.video_player_manager.meta.MetaData;
 import com.volokh.danylo.video_player_manager.ui.SimpleMainThreadMediaPlayerListener;
 import com.volokh.danylo.video_player_manager.ui.VideoPlayerView;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.R;
 
 import org.apache.http.HttpEntity;
@@ -303,13 +303,13 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
 
                         @Override
                         public void onCompleted(JSONObject object, GraphResponse response) {
-                            Log.i("LoginActivity", response.toString());
+                            Log.i("VC_LoginActivity", response.toString());
                             // Get facebook data from login
 
                             JSONObject user = (JSONObject) response.getJSONObject();
                             try {
                                 String email = user.getString("email");
-                                Log.i("LoginActivity", object.toString());
+                                Log.i("VC_LoginActivity", object.toString());
 
                                 fbMetadata = user.toString();
                                 new addFbToken(accessToken).execute();
@@ -319,7 +319,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
                                 Log.i("LoginActivity1", e.toString());
                                 Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", getActivity());
 //                            LoginManager.getInstance().logOut();
-//                            Toast.makeText(LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(VC_LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
                             }
                         }
                     });
@@ -958,7 +958,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
                         mVideoPlayerManager1.resetMediaPlayer();
 
                         getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                        ((MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
+                        ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
 
                         ExploreFragment fragment = new ExploreFragment();
                         Bundle b1 = new Bundle();
@@ -972,7 +972,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
 //                        ft.addToBackStack(new HomeFragment().getClass().getName());
                         ft.commit();
 
-//                        TabLayout.Tab tab= ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+//                        TabLayout.Tab tab= ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
 //                        tab.select();
 
                     } else if (Integer.parseInt(err) == 2) {

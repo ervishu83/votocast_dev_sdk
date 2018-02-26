@@ -12,9 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -57,7 +55,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class LoginActivity extends AppCompatActivity {
+public class VC_LoginActivity extends AppCompatActivity {
 
     @BindView(R2.id.loginVideo)ScalableVideoView loginVideo;
 
@@ -244,7 +242,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 Log.i("fb login", "fb login");
 
-                mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+                mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
 
@@ -257,22 +255,22 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.i("LoginActivity", response.toString());
+                        Log.i("VC_LoginActivity", response.toString());
                         // Get facebook data from login
 
                         JSONObject user = (JSONObject) response.getJSONObject();
                         try {
                             String email = user.getString("email");
-                            Log.i("LoginActivity", object.toString());
+                            Log.i("VC_LoginActivity", object.toString());
 
                             new callWsLogin(accessToken).execute(object);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Log.i("LoginActivity1", e.toString());
-                            Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", LoginActivity.this);
+                            Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", VC_LoginActivity.this);
 //                            LoginManager.getInstance().logOut();
-//                            Toast.makeText(LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(VC_LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -307,7 +305,7 @@ public class LoginActivity extends AppCompatActivity {
 
                 Log.i("fb login", "fb login");
 
-                mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+                mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                     @Override
                     public void onCancel(DialogInterface dialog) {
 
@@ -320,22 +318,22 @@ public class LoginActivity extends AppCompatActivity {
 
                     @Override
                     public void onCompleted(JSONObject object, GraphResponse response) {
-                        Log.i("LoginActivity", response.toString());
+                        Log.i("VC_LoginActivity", response.toString());
                         // Get facebook data from login
 
                         JSONObject user = (JSONObject) response.getJSONObject();
                         try {
                             String email = user.getString("email");
-                            Log.i("LoginActivity", object.toString());
+                            Log.i("VC_LoginActivity", object.toString());
 
                             new callWsLogin(accessToken).execute(object);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                             Log.i("LoginActivity1", e.toString());
-                            Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", LoginActivity.this);
+                            Constant.ShowFbErrorMessage("Error", "We are unable to get email from your Facebook account. Please try again", VC_LoginActivity.this);
 //                            LoginManager.getInstance().logOut();
-//                            Toast.makeText(LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
+//                            Toast.makeText(VC_LoginActivity.this, "Your Facebook account is not verified", Toast.LENGTH_LONG).show();
                         }
                     }
                 });
@@ -406,7 +404,7 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
 
-            mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                 }
@@ -470,17 +468,17 @@ public class LoginActivity extends AppCompatActivity {
                                     if (err.equals("0")) {
                                         String token = jo.getString("access_token");
 //                                        Log.i("log", token);
-                                        Constant.saveSharedData(LoginActivity.this, "pref_login", token);
-                                        Constant.saveSharedData(LoginActivity.this, "is_fab_connect", "true");
-                                        Constant.saveSharedData(LoginActivity.this, "is_twitter_connect", "false");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "pref_login", token);
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_fab_connect", "true");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_twitter_connect", "false");
 
                                         JSONObject user = jo.getJSONObject("user");
                                         Log.i("log user", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "username", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "myId", user.getString("id"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "username", user.getString("username"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "myId", user.getString("id"));
 
-//                                        startActivity(new Intent(LoginActivity.this, LoginActivity.class));
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                                        startActivity(new Intent(VC_LoginActivity.this, VC_LoginActivity.class));
+                                        startActivity(new Intent(VC_LoginActivity.this, VC_MainActivity.class));
                                         finish();
                                     } else {
                                         JSONObject validation = jo.getJSONObject("validation");
@@ -489,7 +487,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                        Log.i("log",validation.getJSONArray("email").toString());
 //                                        Log.i("log",errMsgArr.get(0).toString());
 
-                                        MyUtils.showToast(LoginActivity.this, errMsgArr.get(0).toString());
+                                        MyUtils.showToast(VC_LoginActivity.this, errMsgArr.get(0).toString());
                                     }
 
                                 } catch (Exception e) {
@@ -499,7 +497,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", LoginActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_LoginActivity.this);
                     }
                     return false;
                 }
@@ -621,7 +619,7 @@ public class LoginActivity extends AppCompatActivity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-            mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
 
@@ -675,20 +673,20 @@ public class LoginActivity extends AppCompatActivity {
                                     if (err.equals("0")) {
                                         String token = jo.getString("access_token");
                                         Log.i("log", token);
-                                        Constant.saveSharedData(LoginActivity.this, "pref_login", token);
-                                        Constant.saveSharedData(LoginActivity.this, "is_fab_connect", "false");
-                                        Constant.saveSharedData(LoginActivity.this, "is_twitter_connect", "false");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "pref_login", token);
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_fab_connect", "false");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_twitter_connect", "false");
 
                                         JSONObject user = jo.getJSONObject("user");
                                         Log.i("log user", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "username", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "myId", user.getString("id"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "username", user.getString("username"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "myId", user.getString("id"));
 
-//                                        startActivity(new Intent(LoginActivity.this, LoginActivity.class));
+//                                        startActivity(new Intent(VC_LoginActivity.this, VC_LoginActivity.class));
 
                                         Log.e("VOTOCAST",token + " - " + user.getString("username") + " - " + user.getString("id"));
 
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                                        startActivity(new Intent(VC_LoginActivity.this, VC_MainActivity.class));
                                         finish();
                                     } else {
                                         JSONObject validation = jo.getJSONObject("validation");
@@ -706,7 +704,7 @@ public class LoginActivity extends AppCompatActivity {
 //                                        Log.i("log",validation.getJSONArray("email").toString());
 //                                        Log.i("log",errMsgArr.get(0).toString());
 
-                                        MyUtils.showToast(LoginActivity.this, msg);
+                                        MyUtils.showToast(VC_LoginActivity.this, msg);
                                     }
 
                                 } catch (Exception e) {
@@ -716,7 +714,7 @@ public class LoginActivity extends AppCompatActivity {
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", LoginActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_LoginActivity.this);
                     }
                     return false;
                 }
@@ -748,7 +746,7 @@ public class LoginActivity extends AppCompatActivity {
 //            mProgressDialog.show();
             super.onPreExecute();
 
-            mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
 
@@ -800,19 +798,19 @@ public class LoginActivity extends AppCompatActivity {
                                     if (err.equals("0")) {
                                         String token = jo.getString("access_token");
                                         Log.i("log", token);
-                                        Constant.saveSharedData(LoginActivity.this, "pref_login", token);
-                                        Constant.saveSharedData(LoginActivity.this, "is_fab_connect", "false");
-                                        Constant.saveSharedData(LoginActivity.this, "is_twitter_connect", "false");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "pref_login", token);
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_fab_connect", "false");
+                                        Constant.saveSharedData(VC_LoginActivity.this, "is_twitter_connect", "false");
 
                                         JSONObject user = jo.getJSONObject("user");
                                         Log.i("log user", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "username", user.getString("username"));
-                                        Constant.saveSharedData(LoginActivity.this, "myId", user.getString("id"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "username", user.getString("username"));
+                                        Constant.saveSharedData(VC_LoginActivity.this, "myId", user.getString("id"));
 
                                         Log.e("VOTOCAST",token + " - " + user.getString("username") + " - " + user.getString("id"));
 
-//                                        MyUtils.showToast(LoginActivity.this,"Login successful");
-                                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
+//                                        MyUtils.showToast(VC_LoginActivity.this,"Login successful");
+                                        startActivity(new Intent(VC_LoginActivity.this, VC_MainActivity.class));
                                         finish();
                                     } else {
 //                                        JSONObject validation = jo.getJSONObject("validation");
@@ -821,18 +819,18 @@ public class LoginActivity extends AppCompatActivity {
 //                                        Log.i("log",validation.getJSONArray("email").toString());
 //                                        Log.i("log",errMsgArr.get(0).toString());
 
-                                        MyUtils.showToast(LoginActivity.this, errMsg);
+                                        MyUtils.showToast(VC_LoginActivity.this, errMsg);
                                     }
 
                                 } catch (Exception e) {
-                                    Constant.ShowErrorMessage("Error", e.getMessage(), LoginActivity.this);
+                                    Constant.ShowErrorMessage("Error", e.getMessage(), VC_LoginActivity.this);
                                 }
                             }
                         });
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", LoginActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_LoginActivity.this);
                     }
                     return false;
                 }
@@ -861,7 +859,7 @@ public class LoginActivity extends AppCompatActivity {
 //            mProgressDialog.show();
             super.onPreExecute();
 
-            mProgressHUD = ProgressHUD.show(LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_LoginActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
 
@@ -913,7 +911,7 @@ public class LoginActivity extends AppCompatActivity {
 
                                     if (err.equals("0")) {
 
-                                        MyUtils.showToast(LoginActivity.this, "" + msg);
+                                        MyUtils.showToast(VC_LoginActivity.this, "" + msg);
                                         etSignupEmail.setVisibility(View.GONE);
                                         etSignupUsername.setVisibility(View.GONE);
                                         etSignupPassword.setVisibility(View.GONE);
@@ -933,18 +931,18 @@ public class LoginActivity extends AppCompatActivity {
 //                                        toolbar.setTitle("Login");
 
                                     } else {
-                                        MyUtils.showToast(LoginActivity.this, "" + msg);
+                                        MyUtils.showToast(VC_LoginActivity.this, "" + msg);
                                     }
 
                                 } catch (Exception e) {
-                                    Constant.ShowErrorMessage("Error", e.getMessage(), LoginActivity.this);
+                                    Constant.ShowErrorMessage("Error", e.getMessage(), VC_LoginActivity.this);
                                 }
                             }
                         });
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", LoginActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_LoginActivity.this);
                     }
                     return false;
                 }
@@ -953,21 +951,21 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @OnClick(R2.id.tvSignupText2)void fnGoToTerms(){
-        startActivity(new Intent(this, TermsOfServiceActivity.class));
+        startActivity(new Intent(this, VC_TermsOfServiceActivity.class));
     }
     @OnClick(R2.id.tvSignupText4)void fnGoToPolicy(){
-        startActivity(new Intent(this, PrivacyPolicyActivity.class));
+        startActivity(new Intent(this, VC_PrivacyPolicyActivity.class));
     }
 
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(LoginActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_LoginActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(LoginActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_LoginActivity.this).reportActivityStop(this);
     }
 }

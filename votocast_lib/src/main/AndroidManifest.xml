@@ -81,13 +81,13 @@
         <!--  ******************* Google analytics service end ********************** -->
 
         <activity
-            android:name=".LoginActivity"
+            android:name=".VC_LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".VC_MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar"
             android:windowSoftInputMode="adjustPan"
@@ -99,13 +99,13 @@
             android:exported="false" />
 
         <activity
-            android:name=".ChangePasswordActivity"
+            android:name=".VC_ChangePasswordActivity"
             android:label="@string/title_activity_change_password"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".NoticationActivity"
+            android:name=".VC_NoticationActivity"
             android:label="@string/title_activity_notication"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
@@ -147,52 +147,52 @@
         </service>
 
         <activity
-            android:name=".ReportsActivity"
+            android:name=".VC_ReportsActivity"
             android:label="@string/title_activity_reports"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
-        <activity android:name=".DeepLinkActivity"
+        <activity android:name=".VC_DeepLinkActivity"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".HelpActivity"
+            android:name=".VC_HelpActivity"
             android:label="@string/title_activity_help"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".PrivacyPolicyActivity"
+            android:name=".VC_PrivacyPolicyActivity"
             android:label="@string/title_activity_privacy_policy"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".RulesActivity"
+            android:name=".VC_RulesActivity"
             android:label="@string/title_activity_rules"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SupportActivity"
+            android:name=".VC_SupportActivity"
             android:label="@string/title_activity_support"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".TermsOfServiceActivity"
+            android:name=".VC_TermsOfServiceActivity"
             android:label="@string/title_activity_terms_of_service"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ContestRulesActivity"
+            android:name=".VC_ContestRulesActivity"
             android:label="@string/title_activity_contest_rules"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".ReportIssueActivity"
+            android:name=".VC_ReportIssueActivity"
             android:label="@string/title_activity_report_issue"
             android:theme="@style/AppTheme.NoActionBar"
             android:configChanges="orientation"

@@ -55,7 +55,7 @@ import fragments.CommentsFragment;
 import fragments.ProfileFragment;
 
 import com.votocast.votocast.R;
-import com.votocast.votocast.ReportsActivity;
+import com.votocast.votocast.VC_ReportsActivity;
 
 /**
  * Created by Anil on 5/26/2016.
@@ -818,7 +818,7 @@ public class HomeTestAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 Log.i("report", vidId + "=" + reportList.toString());
-                Intent m1 = new Intent(context, ReportsActivity.class);
+                Intent m1 = new Intent(context, VC_ReportsActivity.class);
                 m1.putExtra("vidId", vidId);
                 m1.putExtra("report", reportList);
                 context.startActivity(m1);

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.votocast.votocast.NoticationActivity"
+    tools:context="com.votocast.votocast.VC_NoticationActivity"
     tools:showIn="@layout/activity_notication">
 
     <ScrollView

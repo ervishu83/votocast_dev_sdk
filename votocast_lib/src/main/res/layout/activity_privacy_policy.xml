@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.votocast.votocast.PrivacyPolicyActivity">
+    tools:context="com.votocast.votocast.VC_PrivacyPolicyActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarPrivacyPolicy"

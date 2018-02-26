@@ -13,11 +13,8 @@ import android.util.Log;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.R;
-
-import org.json.JSONObject;
-import org.json.simple.parser.JSONParser;
 
 import java.util.Map;
 
@@ -67,7 +64,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 //                .setContentIntent(pendingIntent);
 
         if(data.get("campaign_id").equals("")){
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, VC_MainActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);  // if app open then not reload app
             PendingIntent pendingIntent = PendingIntent.getActivity(this, 0 /* Request code */, intent,
@@ -75,7 +72,7 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
 
             notificationBuilder.setContentIntent(pendingIntent);
         }else{
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, VC_MainActivity.class);
             intent.putExtra("campId", data.get("campaign_id"));
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 //            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);  // if app open then not reload app

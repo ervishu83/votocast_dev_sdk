@@ -50,21 +50,17 @@ import com.volokh.danylo.video_player_manager.ui.VideoPlayerView;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-import class_adapter.ActivityAdapter;
 import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
-import db.ActivityClass;
 import db.UploadVideo;
-import fm.jiecao.jcvideoplayer_lib.JCVideoPlayer;
 
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
-import org.json.JSONArray;
 import org.json.JSONObject;
 
 /**
@@ -106,8 +102,8 @@ public class LoadVideoFragment extends Fragment {
 
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         View v = inflater.inflate(R.layout.fragment_load_video, container, false);
-        ((MainActivity) getActivity()).getSupportActionBar().hide();
-        ((MainActivity) getActivity()).getTabLayout().setVisibility(View.GONE);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().hide();
+        ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.GONE);
 
         Tracker t = ((MyAppTracker)getActivity().getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);
         t.setScreenName("Add Videos");
@@ -245,11 +241,11 @@ public class LoadVideoFragment extends Fragment {
                 if (event.getAction() == KeyEvent.ACTION_DOWN) {
                     if (keyCode == KeyEvent.KEYCODE_BACK) {
                         getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                        ((MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
+                        ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
                         TabLayout.Tab tab;
 
                         if (Constant.getShareData(getActivity(), "camp_id").equals("")) {
-                            tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+                            tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
                             tab.select();
                         } else {
                             FragmentManager fragmentManager = ((FragmentActivity) getActivity()).getSupportFragmentManager();
@@ -270,11 +266,11 @@ public class LoadVideoFragment extends Fragment {
 
     private void cancelUpload(){
         getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        ((MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
+        ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
         TabLayout.Tab tab;
 
         if (Constant.getShareData(getActivity(), "camp_id").equals("")) {
-            tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+            tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
             tab.select();
         } else {
             FragmentManager fragmentManager = ((FragmentActivity) getActivity()).getSupportFragmentManager();
@@ -551,11 +547,11 @@ public class LoadVideoFragment extends Fragment {
                                                 @Override
                                                 public void onClick(DialogInterface dialogInterface, int i) {
                                                     getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-                                                    ((MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
+                                                    ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.VISIBLE);
                                                     TabLayout.Tab tab;
 
                                                     if (Constant.getShareData(getActivity(), "camp_id").equals("")) {
-                                                        tab = ((MainActivity) getActivity()).getTabLayout().getTabAt(0);
+                                                        tab = ((VC_MainActivity) getActivity()).getTabLayout().getTabAt(0);
                                                         tab.select();
                                                     } else {
                                                         FragmentManager fragmentManager = ((FragmentActivity) getActivity()).getSupportFragmentManager();

@@ -1,6 +1,5 @@
 package com.votocast.votocast;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -15,15 +14,10 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
 
-import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 import class_adapter.Constant;
 import class_adapter.MyUtils;
-import class_adapter.ProgressHUD;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -51,9 +45,9 @@ public class SplashActivity extends AppCompatActivity {
 //            @Override
 //            public void run() {
 //                if (token.equals(""))
-//                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+//                    startActivity(new Intent(SplashActivity.this, VC_LoginActivity.class));
 //                else
-//                    startActivity(new Intent(SplashActivity.this, MainActivity.class));
+//                    startActivity(new Intent(SplashActivity.this, VC_MainActivity.class));
 //                finish();
 //            }
 //        }, 4000);
@@ -130,9 +124,9 @@ public class SplashActivity extends AppCompatActivity {
 
                                         final String token = Constant.getShareData(SplashActivity.this, "pref_login");
                                         if (token.equals(""))
-                                            startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                                            startActivity(new Intent(SplashActivity.this, VC_LoginActivity.class));
                                         else
-                                            startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                                            startActivity(new Intent(SplashActivity.this, VC_MainActivity.class));
                                         finish();
 
                                     } else {

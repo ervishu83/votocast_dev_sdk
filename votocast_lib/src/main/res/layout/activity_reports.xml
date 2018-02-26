@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.votocast.votocast.ReportsActivity">
+    tools:context="com.votocast.votocast.VC_ReportsActivity">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbarReports"

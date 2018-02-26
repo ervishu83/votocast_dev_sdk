@@ -26,7 +26,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class RulesActivity extends AppCompatActivity {
+public class VC_RulesActivity extends AppCompatActivity {
 
     @BindView(R2.id.webRules) WebView webRules;
     ProgressHUD mProgressHUD;
@@ -82,7 +82,7 @@ public class RulesActivity extends AppCompatActivity {
                 if (mProgressHUD.isShowing()) {
                     mProgressHUD.dismiss();
                 }
-                MyUtils.showToast(RulesActivity.this,"Something goes wrong!");
+                MyUtils.showToast(VC_RulesActivity.this,"Something goes wrong!");
             }
         });
         String url = "http://votocast.com/rules.pdf";
@@ -115,12 +115,12 @@ public class RulesActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(RulesActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_RulesActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(RulesActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_RulesActivity.this).reportActivityStop(this);
     }
 }

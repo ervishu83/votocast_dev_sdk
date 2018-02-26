@@ -1,13 +1,11 @@
 package com.votocast.votocast;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,16 +26,15 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class ContestRulesActivity extends AppCompatActivity {
+public class VC_SupportActivity extends AppCompatActivity {
 
-    @BindView(R2.id.webContestRules)WebView webContestRules;
+    @BindView(R2.id.webSupport) WebView webSupport;
     ProgressHUD mProgressHUD;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contest_rules);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarContestRules);
+        setContentView(R.layout.activity_support);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarSupport);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
         toolbar.setBackgroundColor(Color.parseColor(Constant.colorPrimary));
@@ -48,22 +45,16 @@ public class ContestRulesActivity extends AppCompatActivity {
         }
 
         Tracker t = ((MyAppTracker)this.getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);
-        t.setScreenName("Contest Rules");
+        t.setScreenName("Support");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        WebSettings settings = webContestRules.getSettings();
-        settings.setJavaScriptEnabled(true);
-        webContestRules.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
-
-        Intent m1 = getIntent();
-        String url = m1.getStringExtra("ruleUrl");
-        Log.i("RulesUrl",url);
-
-        Log.e("rules","----------- activity called");
+        WebSettings settings = webSupport.getSettings();
+        settings.setJavaScriptEnabled(false);
+        webSupport.setScrollBarStyle(WebView.SCROLLBARS_OUTSIDE_OVERLAY);
 
         if (Build.VERSION.SDK_INT >= 19) // KITKAT
         {
-            webContestRules.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+            webSupport.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
 
         mProgressHUD = ProgressHUD.show(this, "", false, false, new DialogInterface.OnCancelListener() {
@@ -72,7 +63,7 @@ public class ContestRulesActivity extends AppCompatActivity {
             }
         });
 
-        webContestRules.setWebViewClient(new WebViewClient() {
+        webSupport.setWebViewClient(new WebViewClient() {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
 //                Log.i(TAG, "Processing webview url click...");
                 view.loadUrl(url);
@@ -90,12 +81,11 @@ public class ContestRulesActivity extends AppCompatActivity {
                 if (mProgressHUD.isShowing()) {
                     mProgressHUD.dismiss();
                 }
-                MyUtils.showToast(ContestRulesActivity.this,"Something goes wrong!");
+                MyUtils.showToast(VC_SupportActivity.this,"Something goes wrong!");
             }
         });
+        webSupport.loadUrl("http://votocast.com/support");
 
-        webContestRules.loadUrl("http://drive.google.com/viewerng/viewer?embedded=true&url=" + url);
-//        webContestRules.loadUrl(url);
     }
 
     @OnClick(R2.id.toolbar_back_button)void fnBack(){
@@ -123,12 +113,12 @@ public class ContestRulesActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(ContestRulesActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_SupportActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(ContestRulesActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_SupportActivity.this).reportActivityStop(this);
     }
 }

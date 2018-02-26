@@ -72,7 +72,7 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 import com.squareup.picasso.Picasso;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
@@ -198,8 +198,8 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
 //        t.setScreenName("Profile");
 //        t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
         iv.setVisibility(View.GONE);
@@ -558,7 +558,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
                                             username = userObj.getString("username");
                                             userpic = userObj.getString("photo_path");
 
-//                                        ((MainActivity) getActivity()).setActionBarTitle(userObj.getString("username").toUpperCase());
+//                                        ((VC_MainActivity) getActivity()).setActionBarTitle(userObj.getString("username").toUpperCase());
                                             toolText.setText(userObj.getString("username").toUpperCase());
                                             t.setScreenName("Profile - " + userObj.getString("username"));
                                             t.send(new HitBuilders.AppViewBuilder().build());

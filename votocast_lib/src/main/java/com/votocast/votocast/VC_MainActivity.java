@@ -18,7 +18,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
@@ -51,7 +50,7 @@ import fragments.ProfileFragment;
 import fragments.SearchFragment;
 import fragments.TestHomeFragment;
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
+public class VC_MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, com.google.android.gms.location.LocationListener {
 
     protected static final int SELECT_PICTURE = 1;
     private static final int PROFIL_PERMISSION_REQUEST_CODE = 111;
@@ -136,13 +135,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                         break;
                     case 2:
 //                        uploadVideo();
-                        int result = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int result = ContextCompat.checkSelfPermission(VC_MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (result == PackageManager.PERMISSION_GRANTED) {
 
 
-//                            MyUtils.showToast(MainActivity.this.getApplicationContext(), "Please wait videos are loading..");
-                            Constant.saveSharedData(MainActivity.this, "camp_id", "");
-                            Constant.saveSharedData(MainActivity.this, "short_code", "");
+//                            MyUtils.showToast(VC_MainActivity.this.getApplicationContext(), "Please wait videos are loading..");
+                            Constant.saveSharedData(VC_MainActivity.this, "camp_id", "");
+                            Constant.saveSharedData(VC_MainActivity.this, "short_code", "");
 //                            tabLayout.setVisibility(View.GONE);
                             LoadVideoFragment fragment = new LoadVideoFragment();
                             FragmentManager fm = getSupportFragmentManager();
@@ -151,10 +150,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                             ft.addToBackStack(fragment.getClass().getName());
                             ft.commit();
                         } else {
-                            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                                Toast.makeText(MainActivity.this, "Please allow in external storage permission for upload profile picture.", Toast.LENGTH_LONG).show();
+                            if (ActivityCompat.shouldShowRequestPermissionRationale(VC_MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                                Toast.makeText(VC_MainActivity.this, "Please allow in external storage permission for upload profile picture.", Toast.LENGTH_LONG).show();
                             } else {
-                                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+                                ActivityCompat.requestPermissions(VC_MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
                             }
                         }
                         break;
@@ -201,18 +200,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                         break;
                     case 2:
 //                        uploadVideo();
-                        int result = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                        int result = ContextCompat.checkSelfPermission(VC_MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
                         if (result == PackageManager.PERMISSION_GRANTED) {
 
 //                            runOnUiThread(new Runnable() {
 //                                @Override
 //                                public void run() {
-//                                    MyUtils.showToast(MainActivity.this, "Please wait videos are loading..");
+//                                    MyUtils.showToast(VC_MainActivity.this, "Please wait videos are loading..");
 //                                }
 //                            });
 
-                            Constant.saveSharedData(MainActivity.this, "camp_id", "");
-                            Constant.saveSharedData(MainActivity.this, "short_code", "");
+                            Constant.saveSharedData(VC_MainActivity.this, "camp_id", "");
+                            Constant.saveSharedData(VC_MainActivity.this, "short_code", "");
 //                            tabLayout.setVisibility(View.GONE);
                             LoadVideoFragment fragment = new LoadVideoFragment();
                             FragmentManager fm = getSupportFragmentManager();
@@ -221,10 +220,10 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
                             ft.addToBackStack(fragment.getClass().getName());
                             ft.commit();
                         } else {
-                            if (ActivityCompat.shouldShowRequestPermissionRationale(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                                Toast.makeText(MainActivity.this, "Please allow in external storage permission for upload profile picture.", Toast.LENGTH_LONG).show();
+                            if (ActivityCompat.shouldShowRequestPermissionRationale(VC_MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                                Toast.makeText(VC_MainActivity.this, "Please allow in external storage permission for upload profile picture.", Toast.LENGTH_LONG).show();
                             } else {
-                                ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
+                                ActivityCompat.requestPermissions(VC_MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSION_REQUEST_CODE);
                             }
                         }
                         break;
@@ -259,18 +258,18 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         switch (requestCode) {
             case PERMISSION_REQUEST_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-//                    MyUtils.showToast(MainActivity.this,"Now reselect video");
+//                    MyUtils.showToast(VC_MainActivity.this,"Now reselect video");
 
 //                    Log.i("on permission video", "accept");
 
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            MyUtils.showToast(MainActivity.this.getApplicationContext(), "Please wait videos are loading..");
+                            MyUtils.showToast(VC_MainActivity.this.getApplicationContext(), "Please wait videos are loading..");
                         }
                     });
-                    Constant.saveSharedData(MainActivity.this, "camp_id", "");
-                    Constant.saveSharedData(MainActivity.this, "short_code", "");
+                    Constant.saveSharedData(VC_MainActivity.this, "camp_id", "");
+                    Constant.saveSharedData(VC_MainActivity.this, "short_code", "");
 //                            tabLayout.setVisibility(View.GONE);
                     LoadVideoFragment fragment = new LoadVideoFragment();
                     FragmentManager fm = getSupportFragmentManager();
@@ -512,7 +511,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         @Override
         protected Void doInBackground(Void... voids) {
 
-            String token = Constant.getShareData(MainActivity.this, "pref_login");
+            String token = Constant.getShareData(VC_MainActivity.this, "pref_login");
 
             pair = new ArrayList<NameValuePair>();
             pair.add(new BasicNameValuePair("access_token", token));

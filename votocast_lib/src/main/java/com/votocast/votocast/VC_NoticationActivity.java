@@ -35,7 +35,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class NoticationActivity extends AppCompatActivity {
+public class VC_NoticationActivity extends AppCompatActivity {
 
     RadioGroup rgNotificationVotes;
     RadioGroup rgNotificationComments;
@@ -117,17 +117,17 @@ public class NoticationActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 switch (checkedId) {
                     case R2.id.rbNotificationVotes1:
-//                        MyUtils.showToast(NoticationActivity.this, "off");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "off");
                         vote_share = "off";
                         break;
 
                     case R2.id.rbNotificationVotes2:
-//                        MyUtils.showToast(NoticationActivity.this, "followers");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "followers");
                         vote_share = "followers";
                         break;
 
                     case R2.id.rbNotificationVotes3:
-//                        MyUtils.showToast(NoticationActivity.this, "everyone");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "everyone");
                         vote_share = "everyone";
                         break;
                 }
@@ -139,17 +139,17 @@ public class NoticationActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 switch (checkedId) {
                     case R2.id.rbNotificationComments1:
-//                        MyUtils.showToast(NoticationActivity.this, "comment off");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "comment off");
                         comments = "off";
                         break;
 
                     case R2.id.rbNotificationComments2:
-//                        MyUtils.showToast(NoticationActivity.this, "comment followers");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "comment followers");
                         comments = "followers";
                         break;
 
                     case R2.id.rbNotificationComments3:
-//                        MyUtils.showToast(NoticationActivity.this, "comment everyone");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "comment everyone");
                         comments = "everyone";
                         break;
                 }
@@ -161,12 +161,12 @@ public class NoticationActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 switch (checkedId) {
                     case R2.id.rbNotificationNewFollowers1:
-//                        MyUtils.showToast(NoticationActivity.this, "followers off");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "followers off");
                         new_followers = "off";
                         break;
 
                     case R2.id.rbNotificationNewFollowers2:
-//                        MyUtils.showToast(NoticationActivity.this, "follower everyone");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "follower everyone");
                         new_followers = "everyone";
                         break;
                 }
@@ -178,12 +178,12 @@ public class NoticationActivity extends AppCompatActivity {
             public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
                 switch (checkedId) {
                     case R2.id.rbNotificationNewContest1:
-//                        MyUtils.showToast(NoticationActivity.this, "contest off");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "contest off");
                         new_contests = "off";
                         break;
 
                     case R2.id.rbNotificationNewContest2:
-//                        MyUtils.showToast(NoticationActivity.this, "contest everyone");
+//                        MyUtils.showToast(VC_NoticationActivity.this, "contest everyone");
                         new_contests = "on";
                         break;
                 }
@@ -220,7 +220,7 @@ public class NoticationActivity extends AppCompatActivity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-            mProgressHUD = ProgressHUD.show(NoticationActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_NoticationActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                 }
@@ -232,7 +232,7 @@ public class NoticationActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
 
             try {
-                String token = Constant.getShareData(NoticationActivity.this, "pref_login");
+                String token = Constant.getShareData(VC_NoticationActivity.this, "pref_login");
                 pair = new ArrayList<NameValuePair>();
                 pair.add(new BasicNameValuePair("access_token", token));
                 pair.add(new BasicNameValuePair("vote_share", vote_share));
@@ -278,7 +278,7 @@ public class NoticationActivity extends AppCompatActivity {
                                     if (err.equals("0")) {
                                         finish();
                                     } else {
-                                        MyUtils.showToast(NoticationActivity.this, msg);
+                                        MyUtils.showToast(VC_NoticationActivity.this, msg);
                                     }
 
                                 } catch (Exception e) {
@@ -288,7 +288,7 @@ public class NoticationActivity extends AppCompatActivity {
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", NoticationActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_NoticationActivity.this);
                     }
                     return false;
                 }
@@ -299,12 +299,12 @@ public class NoticationActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(NoticationActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_NoticationActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(NoticationActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_NoticationActivity.this).reportActivityStop(this);
     }
 }

@@ -7,11 +7,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.SystemClock;
-import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
@@ -20,22 +16,17 @@ import android.util.Log;
 import android.util.SparseBooleanArray;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.RelativeLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.HitBuilders;
 import com.google.android.gms.analytics.Tracker;
-import com.votocast.votocast.MainActivity;
+import com.votocast.votocast.VC_MainActivity;
 import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import com.votocast.votocast.R2;
@@ -50,13 +41,10 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import class_adapter.ActivityAdapter;
-import class_adapter.CommentList;
 import class_adapter.Constant;
 import class_adapter.ProgressHUD;
 import db.ActivityClass;
-import db.Comment;
 import se.emilsjolander.stickylistheaders.StickyListHeadersListView;
-import utils.Toolbar_ActionMode_Callback;
 import utils.Toolbar_ActionMode_Callback_Activity_Notification;
 
 /**
@@ -87,8 +75,8 @@ public class ActivityFragment extends Fragment {
         t.setScreenName("Activity");
         t.send(new HitBuilders.AppViewBuilder().build());
 
-        ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
-        ((MainActivity) getActivity()).getSupportActionBar().show();
+        ((VC_MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        ((VC_MainActivity) getActivity()).getSupportActionBar().show();
         Toolbar toolbar = (Toolbar) getActivity().findViewById(R.id.toolbarMain);
         ImageView iv = (ImageView) toolbar.findViewById(R.id.toolbarLogo);
         iv.setVisibility(View.GONE);
@@ -102,7 +90,7 @@ public class ActivityFragment extends Fragment {
         ImageView toolbar_delete_button = (ImageView) toolbar.findViewById(R.id.toolbar_delete_button);
         toolbar_delete_button.setVisibility(View.INVISIBLE);
 
-//        ((MainActivity) getActivity()).setActionBarTitle("ACTIVITY");
+//        ((VC_MainActivity) getActivity()).setActionBarTitle("ACTIVITY");
 
         if(savedInstanceState != null)
             token = savedInstanceState.getString("token");

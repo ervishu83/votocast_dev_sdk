@@ -39,7 +39,7 @@ import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 import db.Reports;
 
-public class ReportsActivity extends AppCompatActivity {
+public class VC_ReportsActivity extends AppCompatActivity {
 
     @BindView(R2.id.reportRadioGroup)
     RadioGroup reportRadioGroup;
@@ -165,7 +165,7 @@ public class ReportsActivity extends AppCompatActivity {
 
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressHUD = ProgressHUD.show(ReportsActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_ReportsActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                 }
@@ -175,7 +175,7 @@ public class ReportsActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            String token = Constant.getShareData(ReportsActivity.this, "pref_login");
+            String token = Constant.getShareData(VC_ReportsActivity.this, "pref_login");
             pair = new ArrayList<NameValuePair>();
             pair.add(new BasicNameValuePair("access_token", token));
             pair.add(new BasicNameValuePair("video_id", vidId));
@@ -195,7 +195,7 @@ public class ReportsActivity extends AppCompatActivity {
                     if (response.getString("error").length() == 0) {
                         final String JsonString = response.getString("data");
 
-                        ReportsActivity.this.runOnUiThread(new Runnable() {
+                        VC_ReportsActivity.this.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
 //                                mProgressHUD.dismiss();
@@ -204,10 +204,10 @@ public class ReportsActivity extends AppCompatActivity {
                                     String posts = jo.getString("message");
                                     int error = jo.getInt("error");
                                     if (error == 0) {
-                                        MyUtils.showToast(ReportsActivity.this, posts);
+                                        MyUtils.showToast(VC_ReportsActivity.this, posts);
                                         finish();
                                     }else if (error == 2) {
-                                        final AlertDialog.Builder myReportDialog = new AlertDialog.Builder(ReportsActivity.this);
+                                        final AlertDialog.Builder myReportDialog = new AlertDialog.Builder(VC_ReportsActivity.this);
                                         myReportDialog.setTitle("VOTOCAST")
                                                 .setMessage(posts)
                                                 .setPositiveButton("Resend Email", new DialogInterface.OnClickListener() {
@@ -220,9 +220,9 @@ public class ReportsActivity extends AppCompatActivity {
                                                 .create()
                                                 .show();
                                     } else
-                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportsActivity.this);
+                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportsActivity.this);
                                 } catch (Exception e) {
-                                    Constant.ShowErrorMessage("Error", e.getMessage(), ReportsActivity.this);
+                                    Constant.ShowErrorMessage("Error", e.getMessage(), VC_ReportsActivity.this);
                                 }
                                 if (mProgressHUD.isShowing() && mProgressHUD != null)
                                     mProgressHUD.dismiss();
@@ -231,7 +231,7 @@ public class ReportsActivity extends AppCompatActivity {
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportsActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportsActivity.this);
                     }
                     return false;
                 }
@@ -250,7 +250,7 @@ public class ReportsActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            String token = Constant.getShareData(ReportsActivity.this, "pref_login");
+            String token = Constant.getShareData(VC_ReportsActivity.this, "pref_login");
             pair = new ArrayList<NameValuePair>();
             pair.add(new BasicNameValuePair("access_token", token));
             return null;
@@ -277,16 +277,16 @@ public class ReportsActivity extends AppCompatActivity {
                                     String posts = jo.getString("message");
                                     int error = jo.getInt("error");
                                     if (error == 0) {
-                                        MyUtils.showToast(ReportsActivity.this, posts);
+                                        MyUtils.showToast(VC_ReportsActivity.this, posts);
                                     } else
-                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportsActivity.this);
+                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportsActivity.this);
                                 } catch (Exception e) {
-                                    Constant.ShowErrorMessage("Error", e.getMessage(), ReportsActivity.this);
+                                    Constant.ShowErrorMessage("Error", e.getMessage(), VC_ReportsActivity.this);
                                 }
                             }
                         });
                     } else {
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportsActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportsActivity.this);
                     }
                     return false;
                 }
@@ -298,12 +298,12 @@ public class ReportsActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(ReportsActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_ReportsActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(ReportsActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_ReportsActivity.this).reportActivityStop(this);
     }
 }

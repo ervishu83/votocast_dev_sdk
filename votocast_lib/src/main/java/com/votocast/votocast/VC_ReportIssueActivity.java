@@ -36,7 +36,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class ReportIssueActivity extends AppCompatActivity {
+public class VC_ReportIssueActivity extends AppCompatActivity {
 
     @BindView(R2.id.evReportIssues)EditText evReportIssues;
     int count = 0;
@@ -74,7 +74,7 @@ public class ReportIssueActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 Log.i("Text count on",start + "-" + before + " - " + count);
                 if(start >= 399) {
-                    MyUtils.showToast(ReportIssueActivity.this, "Maximum limit is 400 characters");
+                    MyUtils.showToast(VC_ReportIssueActivity.this, "Maximum limit is 400 characters");
                 }
             }
 
@@ -128,7 +128,7 @@ public class ReportIssueActivity extends AppCompatActivity {
 
         protected void onPreExecute() {
             super.onPreExecute();
-            mProgressHUD = ProgressHUD.show(ReportIssueActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
+            mProgressHUD = ProgressHUD.show(VC_ReportIssueActivity.this, "", false, false, new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                 }
@@ -138,7 +138,7 @@ public class ReportIssueActivity extends AppCompatActivity {
         @Override
         protected Void doInBackground(Void... voids) {
 
-            String token = Constant.getShareData(ReportIssueActivity.this, "pref_login");
+            String token = Constant.getShareData(VC_ReportIssueActivity.this, "pref_login");
             pair = new ArrayList<NameValuePair>();
             pair.add(new BasicNameValuePair("access_token", token));
             pair.add(new BasicNameValuePair("issue",issue));
@@ -166,17 +166,17 @@ public class ReportIssueActivity extends AppCompatActivity {
                                     String posts = jo.getString("message");
                                     int error = jo.getInt("error");
                                     if (error == 0) {
-                                        MyUtils.showToast(ReportIssueActivity.this, posts);
+                                        MyUtils.showToast(VC_ReportIssueActivity.this, posts);
                                         finish();
                                     } else
-                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportIssueActivity.this);
+                                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportIssueActivity.this);
                                 } catch (Exception e) {
-                                    Constant.ShowErrorMessage("Error", e.getMessage(), ReportIssueActivity.this);
+                                    Constant.ShowErrorMessage("Error", e.getMessage(), VC_ReportIssueActivity.this);
                                 }
                             }
                         });
                     } else {
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ReportIssueActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ReportIssueActivity.this);
                     }
                     if (mProgressHUD != null && mProgressHUD.isShowing())
                         mProgressHUD.dismiss();
@@ -190,12 +190,12 @@ public class ReportIssueActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(ReportIssueActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_ReportIssueActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(ReportIssueActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_ReportIssueActivity.this).reportActivityStop(this);
     }
 }

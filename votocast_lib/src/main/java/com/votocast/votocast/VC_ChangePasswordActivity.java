@@ -33,7 +33,7 @@ import class_adapter.Constant;
 import class_adapter.MyUtils;
 import class_adapter.ProgressHUD;
 
-public class ChangePasswordActivity extends AppCompatActivity {
+public class VC_ChangePasswordActivity extends AppCompatActivity {
 
     @BindView(R2.id.evChangePwdOld)
     EditText evChangePwdOld;
@@ -124,7 +124,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
         protected void onPreExecute() {
             // TODO Auto-generated method stub
             super.onPreExecute();
-            mProgressHUD=ProgressHUD.show(ChangePasswordActivity.this,"",false,false,new DialogInterface.OnCancelListener() {
+            mProgressHUD=ProgressHUD.show(VC_ChangePasswordActivity.this,"",false,false,new DialogInterface.OnCancelListener() {
                 @Override
                 public void onCancel(DialogInterface dialog) {
                 }
@@ -136,7 +136,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
             // TODO Auto-generated method stub
 
             try {
-                String token = Constant.getShareData(ChangePasswordActivity.this, "pref_login");
+                String token = Constant.getShareData(VC_ChangePasswordActivity.this, "pref_login");
                 pair = new ArrayList<NameValuePair>();
                 pair.add(new BasicNameValuePair("access_token", token));
                 pair.add(new BasicNameValuePair("old_password", oldPwd));
@@ -177,16 +177,16 @@ public class ChangePasswordActivity extends AppCompatActivity {
 
                                     if (err.equals("0")) {
                                         String errMsg = jo.getString("message");
-                                        MyUtils.showToast(ChangePasswordActivity.this, errMsg );
+                                        MyUtils.showToast(VC_ChangePasswordActivity.this, errMsg );
                                         finish();
                                     } else {
 //                                        JSONObject validation = jo.getJSONObject("validation");
 //                                        JSONArray errMsgArr = validation.getJSONArray("email");
 //
-//                                        MyUtils.showToast(ChangePasswordActivity.this, errMsgArr.get(0).toString());
+//                                        MyUtils.showToast(VC_ChangePasswordActivity.this, errMsgArr.get(0).toString());
 
                                         String errMsg = jo.getString("message");
-                                        MyUtils.showToast(ChangePasswordActivity.this, errMsg );
+                                        MyUtils.showToast(VC_ChangePasswordActivity.this, errMsg );
                                     }
 
                                 } catch (Exception e) {
@@ -196,7 +196,7 @@ public class ChangePasswordActivity extends AppCompatActivity {
                     } else {
                         if (mProgressHUD.isShowing() && mProgressHUD != null)
                             mProgressHUD.dismiss();
-                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", ChangePasswordActivity.this);
+                        Constant.ShowErrorMessage("Error", "Sorry, an error has occurred. Please try again later.", VC_ChangePasswordActivity.this);
                     }
                     return false;
                 }
@@ -207,12 +207,12 @@ public class ChangePasswordActivity extends AppCompatActivity {
     @Override
     public void onStart() {
         super.onStart();
-        GoogleAnalytics.getInstance(ChangePasswordActivity.this).reportActivityStart(this);
+        GoogleAnalytics.getInstance(VC_ChangePasswordActivity.this).reportActivityStart(this);
     }
 
     @Override
     public void onStop() {
         super.onStop();
-        GoogleAnalytics.getInstance(ChangePasswordActivity.this).reportActivityStop(this);
+        GoogleAnalytics.getInstance(VC_ChangePasswordActivity.this).reportActivityStop(this);
     }
 }
