@@ -191,7 +191,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_profile, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_profile, container, false);
         ButterKnife.bind(this, v);
 
         t = ((MyAppTracker)getActivity().getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);
@@ -989,7 +989,7 @@ public class ProfileFragment extends Fragment implements View.OnClickListener {
         final Dialog dialog = new Dialog(getActivity());
         // Include dialog.xml file
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.unfollow_user_dialog);
+        dialog.setContentView(R.layout.vc_unfollow_user_dialog);
 
         // set values for custom dialog components - text, image and button
         TextView text = (TextView) dialog.findViewById(R.id.tvDialogUnfollowUserName);

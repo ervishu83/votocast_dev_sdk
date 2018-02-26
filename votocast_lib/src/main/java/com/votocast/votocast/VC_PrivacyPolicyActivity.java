@@ -34,7 +34,7 @@ public class VC_PrivacyPolicyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_privacy_policy);
+        setContentView(R.layout.vc_activity_privacy_policy);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarPrivacyPolicy);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

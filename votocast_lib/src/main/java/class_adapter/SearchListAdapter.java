@@ -75,7 +75,7 @@ public class SearchListAdapter extends BaseAdapter {
 //        if (convertView == null) {
             holder = new Holder();
 
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_leaderboard_recyclerview, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_list_leaderboard_recyclerview, parent, false);
 
             holder.rlVideoClickLink = (RelativeLayout) convertView.findViewById(R.id.rlVideoClickLink);
 
@@ -94,7 +94,7 @@ public class SearchListAdapter extends BaseAdapter {
 
 //        Holder holder = new Holder();
 //        View v;
-//        v = inflater.inflate(R.layout.list_leaderboard_recyclerview, null);
+//        v = inflater.inflate(R.layout.vc_list_leaderboard_recyclerview, null);
 
         Link linkHashtag = new Link(Pattern.compile("(#\\w+)"))
                 .setUnderlined(false)

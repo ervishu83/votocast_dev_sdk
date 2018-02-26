@@ -34,7 +34,7 @@ public class VC_HelpActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_help);
+        setContentView(R.layout.vc_activity_help);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarHelp);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);

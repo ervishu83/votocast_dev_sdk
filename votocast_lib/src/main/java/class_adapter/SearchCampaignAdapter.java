@@ -73,7 +73,7 @@ public class SearchCampaignAdapter extends BaseAdapter {
         if (convertView == null) {
         holder = new Holder();
 
-        convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_campaign_list_item, parent, false);
+        convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_search_campaign_list_item, parent, false);
 
         holder.ivSearchCampaignMainImage = (ImageView) convertView.findViewById(R.id.ivSearchCampaignMainImage);
         holder.btnSearchCampaignFragment = (Button) convertView.findViewById(R.id.btnSearchCampaignFragment);
@@ -89,7 +89,7 @@ public class SearchCampaignAdapter extends BaseAdapter {
 
 //        Holder holder = new Holder();
 //        View v;
-//        v = inflater.inflate(R.layout.list_leaderboard_recyclerview, null);
+//        v = inflater.inflate(R.layout.vc_list_leaderboard_recyclerview, null);
 
         Drawable background = holder.btnSearchCampaignFragment.getBackground();
         if (background instanceof ShapeDrawable) {

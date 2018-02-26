@@ -104,7 +104,7 @@ public class TestHomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_test_home, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_test_home, container, false);
         ButterKnife.bind(this, v);
 
         Tracker t = ((MyAppTracker) getActivity().getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);

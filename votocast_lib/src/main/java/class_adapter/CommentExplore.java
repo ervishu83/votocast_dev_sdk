@@ -67,7 +67,7 @@ public class CommentExplore extends BaseAdapter {
         // TODO Auto-generated method stub
         Holder holder = new Holder();
         View v;
-        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_comment_explore, parent, false);
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_list_comment_explore, parent, false);
 
         holder.tvListItemComment = (LinkableTextView) v.findViewById(R.id.tvListItemComment);
         holder.tvListItemCommentDate = (TextView) v.findViewById(R.id.tvListItemCommentDate);

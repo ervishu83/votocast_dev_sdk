@@ -40,10 +40,6 @@ import class_adapter.MyUtils;
 import class_adapter.ThumbnailRecyclerAdapter;
 import customView.rangeseekbar.RangeSeekBar;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
-import com.votocast.votocast.MyAppTracker;
 import com.votocast.votocast.R;
 import service.VideoCropperIntentService;
 import utils.ThumbnailConfig;
@@ -83,7 +79,7 @@ public class TrimVideoFragment extends Fragment implements ThumbnailGeneratorUti
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_trim_video, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_trim_video, container, false);
 
         Bundle bundle = getArguments();
         filePath = bundle.getString(PARAM_FILE, "");

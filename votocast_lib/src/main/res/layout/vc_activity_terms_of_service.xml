@@ -37,6 +37,9 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <include layout="@layout/content_terms_of_service" />
+    <WebView
+        android:id="@+id/webTerms"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 </LinearLayout>

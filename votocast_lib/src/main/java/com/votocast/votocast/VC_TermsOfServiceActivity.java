@@ -33,7 +33,7 @@ public class VC_TermsOfServiceActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_terms_of_service);
+        setContentView(R.layout.vc_activity_terms_of_service);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarTermsService);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

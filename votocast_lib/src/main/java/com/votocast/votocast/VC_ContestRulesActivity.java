@@ -36,7 +36,7 @@ public class VC_ContestRulesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contest_rules);
+        setContentView(R.layout.vc_activity_contest_rules);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarContestRules);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

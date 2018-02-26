@@ -34,7 +34,7 @@ public class VC_RulesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_rules);
+        setContentView(R.layout.vc_activity_rules);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarRules);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

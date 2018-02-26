@@ -75,7 +75,7 @@ public class CommentList extends BaseAdapter {
         if (convertView == null) {
             holder = new Holder();
 
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.comment_list_item, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_comment_list_item, parent, false);
 
             holder.civListCommentVideoPic = (CircleImageView) convertView.findViewById(R.id.civListCommentVideoPic);
             holder.tvListCommentUsername = (TextView) convertView.findViewById(R.id.tvListCommentUsername);
@@ -86,7 +86,7 @@ public class CommentList extends BaseAdapter {
         } else
             holder = (Holder) convertView.getTag();
 //        Holder holder = new Holder();
-//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.comment_list_item, parent, false);
+//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_comment_list_item, parent, false);
 
 
         Constant.setTextFontsMedium(mActivity, holder.tvListCommentUsername);

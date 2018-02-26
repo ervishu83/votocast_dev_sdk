@@ -288,7 +288,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
         // Inflate the layout for this fragment
         FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
 
-        View v = inflater.inflate(R.layout.fragment_settings, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_settings, container, false);
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
@@ -851,7 +851,7 @@ public class SettingsFragment extends Fragment implements View.OnClickListener, 
                 auth_dialog = new Dialog(getActivity());
                 auth_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                auth_dialog.setContentView(R.layout.auth_dialog);
+                auth_dialog.setContentView(R.layout.vc_auth_dialog);
                 web = (WebView) auth_dialog.findViewById(R.id.webv);
                 web.getSettings().setJavaScriptEnabled(true);
 //                web.getSettings().setDomStorageEnabled(true);

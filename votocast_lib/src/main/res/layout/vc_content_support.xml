@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.votocast.votocast.VC_SupportActivity"
-    tools:showIn="@layout/activity_support">
+    tools:showIn="@layout/vc_activity_support">
 
     <WebView
         android:id="@+id/webSupport"

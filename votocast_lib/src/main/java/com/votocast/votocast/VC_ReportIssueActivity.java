@@ -44,7 +44,7 @@ public class VC_ReportIssueActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_report_issue);
+        setContentView(R.layout.vc_activity_report_issue);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarReportIssue);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

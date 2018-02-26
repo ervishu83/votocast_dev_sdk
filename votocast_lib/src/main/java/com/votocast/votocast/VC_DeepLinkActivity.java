@@ -16,7 +16,7 @@ public class VC_DeepLinkActivity extends AppCompatActivity implements View.OnCli
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deep_link);
+        setContentView(R.layout.vc_activity_deep_link);
 
         findViewById(R.id.button_ok).setOnClickListener(this);
     }

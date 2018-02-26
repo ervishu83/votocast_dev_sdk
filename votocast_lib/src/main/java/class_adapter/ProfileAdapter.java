@@ -71,8 +71,8 @@ public class ProfileAdapter extends BaseAdapter {
         // TODO Auto-generated method stub
         Holder holder = new Holder();
         View v;
-//        v = inflater.inflate(R.layout.list_leaderboard_recyclerview, null);
-        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_leaderboard_recyclerview, parent, false);
+//        v = inflater.inflate(R.layout.vc_list_leaderboard_recyclerview, null);
+        v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_list_leaderboard_recyclerview, parent, false);
 
         holder.rlVideoClickLink = (RelativeLayout) v.findViewById(R.id.rlVideoClickLink);
 

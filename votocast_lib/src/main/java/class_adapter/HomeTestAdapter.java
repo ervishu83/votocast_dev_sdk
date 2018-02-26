@@ -114,7 +114,7 @@ public class HomeTestAdapter extends BaseAdapter {
         if (convertView == null) {
             holder = new Holder();
 
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.test_home_list_item, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_test_home_list_item, parent, false);
 
             holder.videoplayer = (JCVideoPlayer) convertView.findViewById(R.id.videoplayer);
             holder.ivHomeVidPlayTest = (ImageView) convertView.findViewById(R.id.ivHomeVidPlayTest);
@@ -469,7 +469,7 @@ public class HomeTestAdapter extends BaseAdapter {
         final Dialog dialog = new Dialog(context);
         // Include dialog.xml file
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.unfollow_user_dialog);
+        dialog.setContentView(R.layout.vc_unfollow_user_dialog);
 
         // set values for custom dialog components - text, image and button
         TextView text = (TextView) dialog.findViewById(R.id.tvDialogUnfollowUserName);
@@ -800,7 +800,7 @@ public class HomeTestAdapter extends BaseAdapter {
         final Dialog dialog = new Dialog(context);
         // Include dialog.xml file
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.share_dialog);
+        dialog.setContentView(R.layout.vc_share_dialog);
 
         // set values for custom dialog components - text, image and button
         TextView tvShareReports = (TextView) dialog.findViewById(R.id.tvShareReports);

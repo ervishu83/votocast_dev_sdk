@@ -33,7 +33,7 @@ public class VC_SupportActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_support);
+        setContentView(R.layout.vc_activity_support);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarSupport);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);

@@ -153,7 +153,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         FacebookSdk.sdkInitialize(getActivity().getApplicationContext());
-        View v = inflater.inflate(R.layout.fragment_detail_video, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_detail_video, container, false);
 
 //        Tracker t = ((MyAppTracker)getActivity().getApplication()).getTracker(MyAppTracker.TrackerName.APP_TRACKER);
 //        t.setScreenName("Detail Video");
@@ -540,7 +540,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
         final Dialog dialog = new Dialog(getActivity());
         // Include dialog.xml file
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.radio_camp_list);
+        dialog.setContentView(R.layout.vc_radio_camp_list);
 
         // set values for custom dialog components - text, image and button
         final RadioGroup campRadioGroup = (RadioGroup) dialog.findViewById(R.id.campRadioGroup);
@@ -638,7 +638,7 @@ public class DetailVideoFragment extends Fragment implements View.OnClickListene
                 auth_dialog = new Dialog(getActivity());
                 auth_dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
 
-                auth_dialog.setContentView(R.layout.auth_dialog);
+                auth_dialog.setContentView(R.layout.vc_auth_dialog);
                 web = (WebView) auth_dialog.findViewById(R.id.webv);
                 web.getSettings().setJavaScriptEnabled(true);
                 web.loadUrl(oauth_url);

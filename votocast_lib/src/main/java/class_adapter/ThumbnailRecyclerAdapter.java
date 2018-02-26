@@ -28,7 +28,7 @@ public class ThumbnailRecyclerAdapter extends RecyclerView.Adapter<ThumbnailView
     @Override
     public ThumbnailViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.list_item_thumbnail, parent, false);
+                .inflate(R.layout.vc_list_item_thumbnail, parent, false);
         return new ThumbnailViewHolder(v);
     }
 

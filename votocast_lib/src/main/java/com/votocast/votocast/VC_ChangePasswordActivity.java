@@ -48,7 +48,7 @@ public class VC_ChangePasswordActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_change_password);
+        setContentView(R.layout.vc_activity_change_password);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarChangePwd);
         setSupportActionBar(toolbar);
         toolbar.setBackgroundColor(Color.parseColor(Constant.colorPrimary));

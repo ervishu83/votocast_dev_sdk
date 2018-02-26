@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.votocast.votocast.VC_LoginActivity"
-    tools:showIn="@layout/activity_login">
+    tools:showIn="@layout/vc_activity_login">
 
     <FrameLayout
         android:layout_width="match_parent"

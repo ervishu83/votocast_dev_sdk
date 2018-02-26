@@ -82,7 +82,7 @@ public class SearchAdapter extends BaseAdapter implements StickyListHeadersAdapt
         HeaderViewHolder holder;
         if (convertView == null) {
             holder = new HeaderViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_header_item, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_search_header_item, parent, false);
             holder.tvSearchHeader = (TextView) convertView.findViewById(R.id.tvSearchHeader);
             holder.llSearchHeader = (LinearLayout) convertView.findViewById(R.id.llSearchHeader);
             convertView.setTag(holder);
@@ -132,7 +132,7 @@ public class SearchAdapter extends BaseAdapter implements StickyListHeadersAdapt
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         holder = new Holder();
-        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_list_item, parent, false);
+        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_search_list_item, parent, false);
 
         holder.rlSearchItem = (RelativeLayout) v.findViewById(R.id.rlSearchItem);
         holder.ivListItemSearchSubImage = (ImageView) v.findViewById(R.id.ivListItemSearchSubImage);
@@ -343,7 +343,7 @@ public class SearchAdapter extends BaseAdapter implements StickyListHeadersAdapt
         final Dialog dialog = new Dialog(mActivity);
         // Include dialog.xml file
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.unfollow_user_dialog);
+        dialog.setContentView(R.layout.vc_unfollow_user_dialog);
 
         // set values for custom dialog components - text, image and button
         TextView text = (TextView) dialog.findViewById(R.id.tvDialogUnfollowUserName);

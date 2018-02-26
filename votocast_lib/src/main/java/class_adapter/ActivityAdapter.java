@@ -34,8 +34,6 @@ import fragments.ExploreFragment;
 import fragments.ProfileFragment;
 import com.votocast.votocast.R;
 
-import org.json.JSONException;
-
 import se.emilsjolander.stickylistheaders.StickyListHeadersAdapter;
 
 /**
@@ -79,7 +77,7 @@ public class ActivityAdapter extends BaseAdapter implements StickyListHeadersAda
         HeaderViewHolder holder;
         if (convertView == null) {
             holder = new HeaderViewHolder();
-            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.search_header_item, parent, false);
+            convertView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_search_header_item, parent, false);
             holder.tvSearchHeader = (TextView) convertView.findViewById(R.id.tvSearchHeader);
             holder.llSearchHeader = (LinearLayout) convertView.findViewById(R.id.llSearchHeader);
             convertView.setTag(holder);
@@ -129,7 +127,7 @@ public class ActivityAdapter extends BaseAdapter implements StickyListHeadersAda
     public View getView(final int position, View convertView, ViewGroup parent) {
         // TODO Auto-generated method stub
         holder = new Holder();
-        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_activity, parent, false);
+        final View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_list_item_activity, parent, false);
 
 //        Log.i("MyId",myId);
         holder.tvListActivitySimpleText = (TextView) v.findViewById(R.id.tvListActivitySimpleText);

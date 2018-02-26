@@ -101,7 +101,7 @@ public class LoadVideoFragment extends Fragment {
         // Inflate the layout for this fragment
 
         getActivity().getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        View v = inflater.inflate(R.layout.fragment_load_video, container, false);
+        View v = inflater.inflate(R.layout.vc_fragment_load_video, container, false);
         ((VC_MainActivity) getActivity()).getSupportActionBar().hide();
         ((VC_MainActivity) getActivity()).getTabLayout().setVisibility(View.GONE);
 
@@ -401,7 +401,7 @@ public class LoadVideoFragment extends Fragment {
             final Holder holder = new Holder();
             final View rowView;
 
-            rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_upload_video, parent, false);
+            rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_list_item_upload_video, parent, false);
             holder.videoDuration = (TextView) rowView.findViewById(R.id.videoDuration);
             holder.uploadImageview = (ImageView) rowView.findViewById(R.id.uploadImageview);
 

@@ -12,8 +12,6 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-import com.bumptech.glide.Glide;
-
 import java.util.ArrayList;
 
 import db.NewestVideo;
@@ -71,7 +69,7 @@ public class ImageAdapter extends BaseAdapter {
         Holder holder = new Holder();
         View rowView;
 
-        rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.newest_video_layout, parent, false);
+        rowView = LayoutInflater.from(parent.getContext()).inflate(R.layout.vc_newest_video_layout, parent, false);
         holder.newestVideoImageview = (ImageView) rowView.findViewById(R.id.newestVideoImageview);
 
         LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(actionbarHeight / 3, actionbarHeight / 3);

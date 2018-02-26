@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
@@ -47,7 +46,7 @@ public class ProgressHUD extends Dialog {
                                    OnCancelListener cancelListener) {
         ProgressHUD dialog = new ProgressHUD(context,R.style.ProgressHUD);
         dialog.setTitle("");
-        dialog.setContentView(R.layout.progress_hud);
+        dialog.setContentView(R.layout.vc_progress_hud);
         if(message == null || message.length() == 0) {
             dialog.findViewById(R.id.message).setVisibility(View.GONE);
         } else {

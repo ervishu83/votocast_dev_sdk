@@ -72,7 +72,7 @@ public class VC_NoticationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_notication);
+        setContentView(R.layout.vc_activity_notication);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbarNotification);
         setSupportActionBar(toolbar);
         ButterKnife.bind(this);
