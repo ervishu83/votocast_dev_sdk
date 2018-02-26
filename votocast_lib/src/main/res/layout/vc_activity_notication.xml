@@ -6,10 +6,10 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context="com.votocast.votocast.VC_ReportsActivity">
+    tools:context="com.votocast.votocast.VC_NoticationActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarReports"
+        android:id="@+id/toolbarNotification"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REPORTS"
+                android:text="NOTIFICATIONS"
                 android:layout_centerInParent="true"
                 android:textColor="@color/whiteText"
                 android:textSize="@dimen/toolbarText"/>
@@ -37,6 +37,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <include layout="@layout/content_reports" />
+    <include layout="@layout/vc_content_notication" />
 
 </LinearLayout>

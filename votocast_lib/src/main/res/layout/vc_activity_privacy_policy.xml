@@ -2,14 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    android:orientation="vertical"
-    tools:context="com.votocast.votocast.VC_NoticationActivity">
+    tools:context="com.votocast.votocast.VC_PrivacyPolicyActivity">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbarNotification"
+        android:id="@+id/toolbarPrivacyPolicy"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
@@ -28,7 +28,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NOTIFICATIONS"
+                android:text="PRIVACY POLICY"
                 android:layout_centerInParent="true"
                 android:textColor="@color/whiteText"
                 android:textSize="@dimen/toolbarText"/>
@@ -37,6 +37,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <include layout="@layout/content_notication" />
+    <include layout="@layout/vc_content_privacy_policy" />
 
 </LinearLayout>

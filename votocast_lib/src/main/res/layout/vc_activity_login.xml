@@ -7,6 +7,6 @@
     android:fitsSystemWindows="true"
     tools:context="com.votocast.votocast.VC_LoginActivity">
 
-    <include layout="@layout/content_login" />
+    <include layout="@layout/vc_content_login" />
 
 </android.support.design.widget.CoordinatorLayout>

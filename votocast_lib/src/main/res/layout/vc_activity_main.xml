@@ -94,6 +94,6 @@
 
     </android.support.v7.widget.Toolbar>
 
-    <include layout="@layout/content_main" />
+    <include layout="@layout/vc_content_main" />
 
 </LinearLayout>
