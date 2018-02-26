@@ -23,8 +23,8 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-    compile 'com.github.ervishu83.votocast_dev_sdk:jcvideoplayer-lib:v1.8'
-    compile 'com.github.ervishu83.votocast_dev_sdk:votocast_lib:v1.8'
+    compile 'com.github.ervishu83.votocast_dev_sdk:jcvideoplayer-lib:v1.12'
+    compile 'com.github.ervishu83.votocast_dev_sdk:votocast_lib:v1.12'
 }
 ```
 
