@@ -13,7 +13,7 @@ Step 1. Add the JitPack repository to your build file. Add it in your root build
 allprojects {
   repositories {
     ...
-    maven { url "https://jitpack.io" }
+    maven { url 'https://jitpack.io' }
   }
 }
 ```
@@ -23,8 +23,7 @@ Step 2. Add the dependency
 
 ```
 dependencies {
-    compile 'com.github.ervishu83.votocast_dev_sdk:jcvideoplayer-lib:v1.12'
-    compile 'com.github.ervishu83.votocast_dev_sdk:votocast_lib:v1.12'
+    compile 'com.github.newkleusapp:votocast_dev_sdk:v1.12'
 }
 ```
 
